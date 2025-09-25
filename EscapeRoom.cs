@@ -65,7 +65,7 @@ class EscapeRoom {
         Console.Write("\tInput your answer: ");
     }
     
-    /// <summary>
+    /// <summary> 
     /// Hàm này tạo ra một địa chỉ email đặc biệt dựa trên câu trả lời của người dùng cho ba câu hỏi.
     /// - Chuyển tất cả các chuỗi đầu vào thành chữ thường.
     /// - Nếu chuỗi đầu tiên rỗng, thêm "68@student.h" vào sau "23120", ngược lại thêm ký tự cuối của chuỗi đầu tiên rồi mới đến "68@student.h".
