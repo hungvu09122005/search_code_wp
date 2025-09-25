@@ -26,7 +26,7 @@ class EscapeRoom
     /// </summary>
     static void SecondQuestion()
     {
-        Console.WriteLine("\n\nSecond Question: ");
+        Console.WriteLine("Second Question: ");
         Console.WriteLine("\tstring s = \"oder\";");
         Console.WriteLine("\tint value1 = 75;");
         Console.WriteLine("\tint value2 = 8;");
@@ -44,7 +44,7 @@ class EscapeRoom
     /// </summary>
     static void FinalQuestion()
     {
-        Console.WriteLine("\n\nFinal Question: ");
+        Console.WriteLine("Final Question: ");
         string code = @"
         int n = arr.Length;
         for (int i = 1; i < n; i++)
@@ -103,7 +103,7 @@ class EscapeRoom
         {
             mail = mail + final[2] + ".edu.vn";
         }
-        Console.WriteLine("Please send invitations to: " + mail);
+        Console.WriteLine("\nPlease send invitations to: " + mail);
     }
 
     static void Main()
@@ -113,17 +113,23 @@ class EscapeRoom
         string? firQues = Console.ReadLine();
         firQues ??= string.Empty;
 
+        Console.Clear();
+        Console.WriteLine("Program EscapeRoom: ");
         SecondQuestion();
         string? seQues = Console.ReadLine();
         seQues ??= string.Empty;
 
+        Console.Clear();
+        Console.WriteLine("Program EscapeRoom: ");
         FinalQuestion();
         string? finalQues = Console.ReadLine();
         finalQues ??= string.Empty;
 
-        Console.WriteLine($"Question 1: {firQues}");
-        Console.WriteLine($"Question 2: {seQues}");
-        Console.WriteLine($"Question 3: {finalQues}");
+        Console.Clear();
+        Console.WriteLine("Program EscapeRoom: ");
+        Console.WriteLine($"\tQuestion 1: {firQues}");
+        Console.WriteLine($"\tQuestion 2: {seQues}");
+        Console.WriteLine($"\tQuestion 3: {finalQues}");
         haveMail(ref firQues, ref seQues, ref finalQues);
         Console.WriteLine("Finish program. Press 'Enter' to exit.");
         Console.ReadLine();
