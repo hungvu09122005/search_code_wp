@@ -68,6 +68,11 @@ class EscapeRoom
 
     static string decode(ref string ansFis)
     {
+        if (!int.TryParse(ansFis, out _))
+        {
+            return "Z";
+        }
+
         int check = (int.Parse(ansFis)) | 635;
         if (check == 2047)
         {
