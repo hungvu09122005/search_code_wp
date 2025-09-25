@@ -34,8 +34,8 @@ class EscapeRoom
         Console.WriteLine("\tchar ch = (char)temp;");
         Console.WriteLine("\tstring result = ch + s;");
         Console.WriteLine("\tConsole.WriteLine(result);");
-        Console.WriteLine("\tWhat do you think the outcome of the program will be?");
-        Console.Write("\tInput your answer: ");
+        Console.WriteLine("What do you think the outcome of the program will be?");
+        Console.Write("Input your answer: ");
     }
 
     /// <summary>
@@ -45,25 +45,25 @@ class EscapeRoom
     static void FinalQuestion()
     {
         Console.WriteLine("Final Question: ");
-        string code = @"
-        int n = arr.Length;
-        for (int i = 1; i < n; i++)
-        {
-            int key = arr[i];
-            int j = i - 1;
-        
-            while (j >= 0 && arr[j] > key)
+        string code =
+            @"            int n = arr.Length;
+            for (int i = 1; i < n; i++)
             {
-                arr[j + 1] = arr[j];
-                j--;
-            }
+                int key = arr[i];
+                int j = i - 1;
         
-            arr[j + 1] = key;
-        }";
+                while (j >= 0 && arr[j] > key)
+                {
+                    arr[j + 1] = arr[j];
+                    j--;
+                }
+        
+                arr[j + 1] = key;
+            }";
 
         Console.WriteLine(code);
-        Console.WriteLine("\tWhich sorting algorithm is this?");
-        Console.Write("\tInput your answer: ");
+        Console.WriteLine("Which sorting algorithm is this?");
+        Console.Write("Input your answer: ");
     }
 
     /// <summary>
@@ -130,6 +130,7 @@ class EscapeRoom
         Console.WriteLine($"\tQuestion 1: {firQues}");
         Console.WriteLine($"\tQuestion 2: {seQues}");
         Console.WriteLine($"\tQuestion 3: {finalQues}");
+
         haveMail(ref firQues, ref seQues, ref finalQues);
         Console.WriteLine("Finish program. Press 'Enter' to exit.");
         Console.ReadLine();
