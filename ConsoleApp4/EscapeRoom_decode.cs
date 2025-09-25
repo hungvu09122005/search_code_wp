@@ -66,6 +66,15 @@ class EscapeRoom
         Console.Write("Input your answer: ");
     }
 
+    /// <summary>
+    /// Giải mã câu trả lời đầu tiên của người dùng.
+    /// - Nếu đầu vào không phải số nguyên, trả về "Z".
+    /// - Nếu đầu vào là số nguyên, thực hiện phép OR với 635.
+    /// - Nếu kết quả bằng 2047, trả về "2".
+    /// - Ngược lại, trả về ký tự dựa trên kết quả modulo 25 cộng với 65 (ký tự chữ cái in hoa).
+    /// </summary>
+    /// <param name="ansFis">Chuỗi câu trả lời đầu tiên của người dùng.</param>
+    /// <returns>Ký tự hoặc số đại diện cho kết quả giải mã.</returns>
     static string decode(ref string ansFis)
     {
         if (!int.TryParse(ansFis, out _))
