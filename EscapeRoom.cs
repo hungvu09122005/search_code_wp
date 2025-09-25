@@ -1,6 +1,7 @@
 using System;
-class EscapeRoom {
-    
+class EscapeRoom
+{
+
     /// <summary>
     /// Hiển thị câu hỏi đầu tiên liên quan đến nguồn gốc tên gọi "Kaito Kid" trong manga và anime "Detective Conan".
     /// Hàm này in ra thông tin thú vị về ý nghĩa tên "Kaito Kid" và yêu cầu người dùng nhập câu trả lời cho một câu hỏi.
@@ -17,7 +18,7 @@ class EscapeRoom {
         Console.WriteLine("\tDo you know what those numbers are?");
         Console.Write("\tInput your answer: ");
     }
-    
+
     /// <summary>
     /// Hiển thị câu hỏi thứ hai liên quan đến kết quả của một đoạn mã C#.
     /// Hàm này sẽ in ra đoạn mã sử dụng phép toán XOR giữa hai số nguyên, sau đó chuyển kết quả thành ký tự và nối với chuỗi.
@@ -25,7 +26,7 @@ class EscapeRoom {
     /// </summary>
     static void SecondQuestion()
     {
-        Console.WriteLine("\n\nSecond Question: ");
+        Console.WriteLine("Second Question: ");
         Console.WriteLine("\tstring s = \"oder\";");
         Console.WriteLine("\tint value1 = 75;");
         Console.WriteLine("\tint value2 = 8;");
@@ -43,7 +44,7 @@ class EscapeRoom {
     /// </summary>
     static void FinalQuestion()
     {
-        Console.WriteLine("\n\nFinal Question: ");
+        Console.WriteLine("Final Question: ");
         string code = @"
         int n = arr.Length;
         for (int i = 1; i < n; i++)
@@ -64,8 +65,8 @@ class EscapeRoom {
         Console.WriteLine("\tWhich sorting algorithm is this?");
         Console.Write("\tInput your answer: ");
     }
-    
-    /// <summary> 
+
+    /// <summary>
     /// Hàm này tạo ra một địa chỉ email đặc biệt dựa trên câu trả lời của người dùng cho ba câu hỏi.
     /// - Chuyển tất cả các chuỗi đầu vào thành chữ thường.
     /// - Nếu chuỗi đầu tiên rỗng, thêm "68@student.h" vào sau "23120", ngược lại thêm ký tự cuối của chuỗi đầu tiên rồi mới đến "68@student.h".
@@ -75,47 +76,60 @@ class EscapeRoom {
     /// </summary>
     static void haveMail(ref string fir, ref string se, ref string final)
     {
-        int firLeg = fir.Length;
-        int seLeg = se.Length;
-        int finalLeg = final.Length;
-        
         fir = fir.ToLower();
         se = se.ToLower();
         final = final.ToLower();
         string mail = "23120";
-        
-        if (firLeg == 0)
+
+        if (fir == String.Empty)
         {
             mail += "68@student.h";
         }
         else
-        {  
-            mail = mail + fir[firLeg - 1] + "68@student.h";
+        {
+            mail = mail + fir[fir.Length - 1] + "68@student.h";
         }
-        if (seLeg == 0)
+
+        if (se == string.Empty)
         {
             mail += "mu";
         }
-        else 
+        else
         {
-            mail = mail + se[0]+ "mu";
+            mail = mail + se[0] + "mu";
         }
-        if (finalLeg >= 3)
+
+        if (final.Length >= 3)
         {
-            mail = mail + final[2];
+            mail = mail + final[2] + ".edu.vn";
         }
-        Console.WriteLine("Hay gui loi moi toi: " + mail);
+        Console.WriteLine("\nPlease send invitations to: " + mail);
     }
 
-    static void Main() {
+    static void Main()
+    {
         Console.WriteLine("Program EscapeRoom: ");
         FirstQuestion();
-        string firQues = Console.ReadLine();
+        string? firQues = Console.ReadLine();
+        firQues ??= string.Empty;
+
+        Console.Clear();
+        Console.WriteLine("Program EscapeRoom: ");
         SecondQuestion();
-        string seQues = Console.ReadLine();
+        string? seQues = Console.ReadLine();
+        seQues ??= string.Empty;
+
+        Console.Clear();
+        Console.WriteLine("Program EscapeRoom: ");
         FinalQuestion();
-        string finalQues = Console.ReadLine();
-        Console.WriteLine(firQues + " " + seQues + " " + finalQues);
+        string? finalQues = Console.ReadLine();
+        finalQues ??= string.Empty;
+
+        Console.Clear();
+        Console.WriteLine("Program EscapeRoom: ");
+        Console.WriteLine($"\tQuestion 1: {firQues}");
+        Console.WriteLine($"\tQuestion 2: {seQues}");
+        Console.WriteLine($"\tQuestion 3: {finalQues}");
         haveMail(ref firQues, ref seQues, ref finalQues);
         Console.WriteLine("Finish program. Press 'Enter' to exit.");
         Console.ReadLine();
