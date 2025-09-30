@@ -10,7 +10,7 @@
 
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="Welcome to the Escape Room!" 
+            <TextBlock x:Name="WelcomeTextBlock"
                Style="{StaticResource SubtitleTextBlockStyle}" 
                FontSize="28" 
                Margin="10" 

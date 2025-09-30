@@ -6,12 +6,13 @@
     xmlns:local="using:App1"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Title="Escape Room">
 
     <!-- FIX: Move ImageBrush to a Grid.Background instead of Window.Background -->
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Assets/escapeRoomBackground.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="ms-appx:///Assets/escapeRoomBackground.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <Frame x:Name="RootFrame"/>
