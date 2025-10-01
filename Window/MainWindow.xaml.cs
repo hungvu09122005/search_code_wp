@@ -35,8 +35,8 @@ namespace App1
             WindowId windowId = Win32Interop.GetWindowIdFromWindow(hWnd);
             AppWindow appWindow = AppWindow.GetFromWindowId(windowId);
 
-            int width = 1000;
-            int height = 800;
+            int width = 1980;
+            int height = 1024;
 
             appWindow.Resize(new Windows.Graphics.SizeInt32(width, height));
             RootFrame.Navigate(typeof(LoginPage));

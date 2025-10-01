@@ -9,10 +9,6 @@
     mc:Ignorable="d">
 
     <Grid>
-        <TextBlock Text="Profile" 
-                 FontSize="28"
-                 Style="{StaticResource SubtitleTextBlockStyle}"/>
-
         <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Spacing="10">
@@ -22,15 +18,34 @@
                    HorizontalAlignment="Center"/>
 
             <TextBox x:Name="NameUser"
-                     Header="Enter your name:" 
-                     PlaceholderText="Name"
-                     Width="250"/>
+                    PlaceholderText="Name"
+                    FontWeight="SemiBold"
+                    Width="250">
+                <TextBox.Header>
+                    <TextBlock Text="Enter your name:" 
+                               Foreground="#B497BD"
+                               FontSize="16"
+                               FontWeight="Bold"/>
+                </TextBox.Header>
+            </TextBox>
 
-            <Button Content="Salute" 
-                    Style="{StaticResource AccentButtonStyle}" 
-                    Width="90" Height="30" 
-                    HorizontalAlignment="Left"
-                    Click="SaluteClick"/>
+
+            <!-- Nút Enter, màu trắng, không đổi khi hover hoặc click -->
+            <Button Width="90" Height="30"
+                    HorizontalAlignment="Center"
+                    Background="#5A2A7A"
+                    FontWeight="Bold"
+                    Click="SaluteClick">    
+                <Button.Resources>
+                    <!-- Brush khi hover -->
+                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#7B4EB3"/>
+                    <!-- Brush khi click -->
+                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#7B4EB3"/>
+                </Button.Resources>
+                <TextBlock Text="Enter" Foreground="White"/>
+            </Button>
+
+
         </StackPanel>
     </Grid>
 </Page>
