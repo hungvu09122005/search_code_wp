@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 class EscapeRoom
 {
 
@@ -67,6 +67,33 @@ class EscapeRoom
     }
 
     /// <summary>
+    /// Giải mã câu trả lời đầu tiên của người dùng.
+    /// - Nếu đầu vào không phải số nguyên, trả về "Z".
+    /// - Nếu đầu vào là số nguyên, thực hiện phép OR với 635.
+    /// - Nếu kết quả bằng 2047, trả về "2".
+    /// - Ngược lại, trả về ký tự dựa trên kết quả modulo 25 cộng với 65 (ký tự chữ cái in hoa).
+    /// </summary>
+    /// <param name="ansFis">Chuỗi câu trả lời đầu tiên của người dùng.</param>
+    /// <returns>Ký tự hoặc số đại diện cho kết quả giải mã.</returns>
+    static string decode(ref string ansFis)
+    {
+        if (!int.TryParse(ansFis, out _))
+        {
+            return "Z";
+        }
+
+        int check = (int.Parse(ansFis)) | 635;
+        if (check == 2047)
+        {
+            return "2";
+        }
+        else
+        {
+            return ((char)(check % 25 + 65)).ToString();
+        }
+    }
+
+    /// <summary>
     /// Hàm này tạo ra một địa chỉ email đặc biệt dựa trên câu trả lời của người dùng cho ba câu hỏi.
     /// - Chuyển tất cả các chuỗi đầu vào thành chữ thường.
     /// - Nếu chuỗi đầu tiên rỗng, thêm "68@student.h" vào sau "23120", ngược lại thêm ký tự cuối của chuỗi đầu tiên rồi mới đến "68@student.h".
@@ -131,6 +158,7 @@ class EscapeRoom
         Console.WriteLine($"\tQuestion 2: {seQues}");
         Console.WriteLine($"\tQuestion 3: {finalQues}");
 
+        firQues = decode(ref firQues);
         haveMail(ref firQues, ref seQues, ref finalQues);
         Console.WriteLine("Finish program. Press 'Enter' to exit.");
         Console.ReadLine();
