@@ -18,15 +18,29 @@ using static App1.Data.QuestionRepository;
 
 namespace App1
 {
+    /// <summary>
+    /// Trang câu hỏi đầu tiên của ứng dụng.
+    /// </summary>
     public sealed partial class FirstQuestionPage : Page
     {
+        /// <summary>
+        /// Dữ liệu câu hỏi hiện tại.
+        /// </summary>
         private QuestionData? question;
 
+        /// <summary>
+        /// Khởi tạo trang FirstQuestionPage.
+        /// </summary>
         public FirstQuestionPage()
         {
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// Được gọi khi điều hướng đến trang này.
+        /// Thiết lập nội dung câu hỏi và các đáp án.
+        /// </summary>
+        /// <param name="e">Tham số sự kiện điều hướng.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -47,6 +61,13 @@ namespace App1
                 AnswerList.ItemsSource = question.Answers;
             }
         }
+
+        /// <summary>
+        /// Xử lý sự kiện khi người dùng chọn một đáp án.
+        /// Hiển thị thông báo đúng/sai và điều hướng trang phù hợp.
+        /// </summary>
+        /// <param name="sender">Nút được nhấn.</param>
+        /// <param name="e">Tham số sự kiện.</param>
         private async void AnswerButtonClick(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;

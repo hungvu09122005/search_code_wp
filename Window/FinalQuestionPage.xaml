@@ -9,50 +9,95 @@
     mc:Ignorable="d">
 
 	<Grid>
+    <!--
+        StackPanel căn giữa nội dung trang, có padding và spacing giữa các thành phần.
+        - Padding="20": Khoảng cách lề bên trong StackPanel.
+        - HorizontalAlignment="Center": Căn giữa theo chiều ngang.
+        - VerticalAlignment="Center": Căn giữa theo chiều dọc.
+        - MaxWidth="800", MinWidth="600": Giới hạn chiều rộng tối đa và tối thiểu.
+        - Spacing="10": Khoảng cách giữa các phần tử con.
+    -->
     <StackPanel Padding="20"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            MaxWidth="800"
-            MinWidth="600"
-            Spacing="10">
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                MaxWidth="800"
+                MinWidth="600"
+                Spacing="10">
 
-        <!-- Tiêu đề câu hỏi -->
+        <!--
+            TitleTextBlock: Hiển thị tiêu đề của câu hỏi.
+            - FontSize="24": Cỡ chữ lớn.
+            - FontWeight="Bold": Chữ đậm.
+            - Foreground="White": Màu chữ trắng.
+            - TextAlignment="Left": Căn trái.
+            - Margin="0": Không có lề.
+        -->
         <TextBlock x:Name="TitleTextBlock"
-               FontSize="24"
-               FontWeight="Bold"
-               Foreground="White"
-               TextAlignment="Left"
-               Margin="0"/>
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   TextAlignment="Left"
+                   Margin="0"/>
 
-        <!-- Nội dung câu hỏi -->
+        <!--
+            BodyTextBlock: Hiển thị nội dung chi tiết của câu hỏi.
+            - FontSize="18": Cỡ chữ vừa.
+            - Foreground="LightBlue": Màu chữ xanh nhạt.
+            - TextWrapping="Wrap": Tự động xuống dòng.
+            - TextAlignment="Left": Căn trái.
+            - Margin="100,0,0,0": Lề trái 100.
+        -->
         <TextBlock x:Name="BodyTextBlock"
-               FontSize="18"
-               Foreground="White"
-               TextWrapping="Wrap"
-               TextAlignment="Left"
-               Margin="100,0,0,0"/>
+                   FontSize="18"
+                   Foreground="LightGray"
+                   TextWrapping="Wrap"
+                   TextAlignment="Left"
+                   Margin="100,0,0,0"/>
 
-        <!-- Danh sách đáp án -->
+        <!--
+            AnswerList: Danh sách các đáp án cho câu hỏi.
+            - Sử dụng ItemsControl để hiển thị danh sách đáp án.
+            - ItemsPanel là StackPanel nằm ngang, căn giữa.
+            - Mỗi đáp án là một Button với nội dung và trạng thái đúng/sai.
+        -->
         <ItemsControl x:Name="AnswerList">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
+                    <!--
+                        StackPanel nằm ngang để các đáp án hiển thị cạnh nhau.
+                        - Orientation="Horizontal": Xếp các phần tử theo chiều ngang.
+                        - HorizontalAlignment="Center": Căn giữa các đáp án.
+                    -->
                     <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center"/>
+                                HorizontalAlignment="Center"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
 
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
+                    <!--
+                        Button đại diện cho một đáp án.
+                        - Content="{Binding Text}": Hiển thị nội dung đáp án.
+                        - Tag="{Binding IsCorrect}": Lưu trạng thái đúng/sai.
+                        - Click="AnswerButtonClick": Xử lý khi người dùng chọn đáp án.
+                        - Height="40": Chiều cao nút.
+                        - Margin="20 5 20 5": Lề quanh nút.
+                        - FontSize="16": Cỡ chữ.
+                        - MinWidth="80": Chiều rộng tối thiểu.
+                        - Background="LightGray": Màu nền xám nhạt.
+                        - CornerRadius="8": Bo góc nút.
+                        - HorizontalAlignment="Center": Căn giữa nút.
+                    -->
                     <Button Content="{Binding Text}"
-                        Tag="{Binding IsCorrect}"
-                        Click="AnswerButtonClick"
-                        Height="40"
-                        Margin="20 5 20 5"
-                        FontSize="16"
-                        MinWidth="80"
-                        Background="LightGray"
-                        CornerRadius="8"
-                        HorizontalAlignment="Center"/>
+                            Tag="{Binding IsCorrect}"
+                            Click="AnswerButtonClick"
+                            Height="40"
+                            Margin="20 5 20 5"
+                            FontSize="16"
+                            MinWidth="80"
+                            Background="LightGray"
+                            CornerRadius="8"
+                            HorizontalAlignment="Center"/>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

@@ -18,22 +18,23 @@ using Windows.Foundation.Collections;
 
 namespace App1.Window
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class ResultPage : Page
     {
         public ResultPage()
         {
             this.InitializeComponent();
-
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
-            ResultTextBlock.Text = "Congratulations! You have escaped the Escape Room.\nFeel free to send us an invitation via email: 23120268@student.hcmus.edu.vn";
+            ResultTextBlock.Text = "You have escaped the Escape Room!\nFeel free to send us an invitation via email:\n23120268@student.hcmus.edu.vn";
+        }
+
+        private void BackToHomeClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(HomePage), App1.Data.UserState.Name);
         }
     }
 }

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Trang FirstQuestionPage: Hiển thị câu hỏi đầu tiên và các đáp án cho người dùng lựa chọn.
+    - TitleTextBlock: Hiển thị tiêu đề câu hỏi.
+    - BodyTextBlock: Hiển thị nội dung chi tiết của câu hỏi.
+    - AnswerList: Danh sách các đáp án, mỗi đáp án là một Button.
+-->
 <Page
     x:Class="App1.FirstQuestionPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -9,29 +15,50 @@
     mc:Ignorable="d">
 
     <Grid>
+        <!--
+            StackPanel căn giữa nội dung trang, giới hạn chiều rộng tối đa và tối thiểu.
+            Spacing: Khoảng cách giữa các phần tử con.
+        -->
         <StackPanel Padding="20"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     MaxWidth="800"
+                    MinWidth="600"
                     Spacing="10">
 
-            <!-- Tiêu đề câu hỏi -->
+            <!--
+                TitleTextBlock: Hiển thị tiêu đề của câu hỏi.
+                - FontSize: Cỡ chữ lớn.
+                - FontWeight: In đậm.
+                - Foreground: Màu chữ trắng.
+                - Margin: Khoảng cách dưới 10px.
+            -->
             <TextBlock x:Name="TitleTextBlock"
-                       FontSize="24"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       TextAlignment="Left"
-                       Margin="0,0,0,10"/>
+                        FontSize="24"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        TextAlignment="Left"
+                        Margin="0,0,0,10"/>
 
-            <!-- Nội dung câu hỏi -->
+            <!--
+                BodyTextBlock: Hiển thị nội dung chi tiết của câu hỏi.
+                - FontSize: Cỡ chữ vừa.
+                - Foreground: Màu chữ xám nhạt.
+                - TextWrapping: Tự động xuống dòng.
+                - Margin: Lề trái 115px, dưới 20px.
+            -->
             <TextBlock x:Name="BodyTextBlock"
-                       FontSize="18"
-                       Foreground="White"
-                       TextWrapping="Wrap"
-                       TextAlignment="Left"
-                       Margin="0,0,0,20"/>
+                        FontSize="18"
+                        Foreground="LightGray"
+                        TextWrapping="Wrap"
+                        TextAlignment="Left"
+                        Margin="40,0,0,20"/>    
 
-            <!-- Danh sách đáp án -->
+            <!--
+                AnswerList: Danh sách các đáp án.
+                - Sử dụng ItemsControl để hiển thị các Button đáp án theo chiều ngang.
+                - Mỗi Button hiển thị nội dung đáp án, lưu trạng thái đúng/sai qua Tag.
+            -->
             <ItemsControl x:Name="AnswerList">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -42,11 +69,18 @@
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
+                        <!--
+                            Button: Đại diện cho một đáp án.
+                            - Content: Nội dung đáp án.
+                            - Tag: Lưu trạng thái đúng/sai.
+                            - Click: Sự kiện khi người dùng chọn đáp án.
+                            - Style: Kích thước, màu nền, bo góc, căn giữa.
+                        -->
                         <Button Content="{Binding Text}"
                                 Tag="{Binding IsCorrect}"
                                 Click="AnswerButtonClick"
                                 Height="40"
-                                Margin="20 5 20 5"
+                                Margin="5"
                                 FontSize="16"
                                 Background="LightGray"
                                 CornerRadius="8"

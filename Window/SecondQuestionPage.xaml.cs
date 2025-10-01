@@ -14,20 +14,30 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
-
 namespace App1.Window
 {
+    /// <summary>
+    /// Trang hiển thị câu hỏi thứ hai và xử lý lựa chọn đáp án của người dùng.
+    /// </summary>
     public sealed partial class SecondQuestionPage : Page
     {
+        /// <summary>
+        /// Dữ liệu câu hỏi hiện tại.
+        /// </summary>
         private QuestionData? question;
 
+        /// <summary>
+        /// Khởi tạo trang SecondQuestionPage.
+        /// </summary>
         public SecondQuestionPage()
         {
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// Được gọi khi điều hướng đến trang này. Thiết lập dữ liệu câu hỏi và hiển thị lên giao diện.
+        /// </summary>
+        /// <param name="e">Tham số sự kiện điều hướng.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -49,6 +59,12 @@ namespace App1.Window
             }
         }
 
+        /// <summary>
+        /// Xử lý sự kiện khi người dùng chọn một đáp án.
+        /// Hiển thị thông báo đúng/sai và điều hướng trang phù hợp.
+        /// </summary>
+        /// <param name="sender">Nút được nhấn.</param>
+        /// <param name="e">Tham số sự kiện.</param>
         private async void AnswerButtonClick(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
@@ -63,7 +79,6 @@ namespace App1.Window
                         CloseButtonText = "OK",
                         XamlRoot = this.XamlRoot
                     };
-
 
                     await correctDialog.ShowAsync();
                     Frame.Navigate(typeof(FinalQuestionPage));
@@ -80,13 +95,12 @@ namespace App1.Window
                         XamlRoot = this.XamlRoot
                     };
 
-
                     var result = await wrongDialog.ShowAsync();
 
                     if (result == ContentDialogResult.Primary)
                     {
                         // Quay lại trang hiện tại
-                        Frame.GoBack(); // hoặc dùng Frame.GoBack() nếu phù hợp
+                        Frame.GoBack();
                     }
                     else if (result == ContentDialogResult.Secondary)
                     {
@@ -95,6 +109,5 @@ namespace App1.Window
                 }
             }
         }
-
     }
 }

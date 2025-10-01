@@ -16,23 +16,23 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using WinRT.Interop;
 
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
-
 namespace App1
 {
-    
-
     /// <summary>
-    /// An empty window that can be used on its own or navigated to within a Frame.
+    /// M?t c?a s? tr?ng có th? ???c s? d?ng ??c l?p ho?c ?i?u h??ng trong m?t Frame.
     /// </summary>
     public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
     {
+        /// <summary>
+        /// Kh?i t?o m?t th? hi?n m?i c?a l?p <see cref="MainWindow"/>.
+        /// Thi?t l?p kích th??c c?a s? và ?i?u h??ng ??n trang ??ng nh?p.
+        /// </summary>
         public MainWindow()
         {
             this.InitializeComponent();
             var currentWindow = this;
 
+            // L?y handle c?a s? hi?n t?i
             IntPtr hWnd = WindowNative.GetWindowHandle(this);
             WindowId windowId = Win32Interop.GetWindowIdFromWindow(hWnd);
             AppWindow appWindow = AppWindow.GetFromWindowId(windowId);
@@ -40,7 +40,9 @@ namespace App1
             int width = 1980;
             int height = 1024;
 
+            // ??t l?i kích th??c c?a s?
             appWindow.Resize(new Windows.Graphics.SizeInt32(width, height));
+            // ?i?u h??ng ??n trang ??ng nh?p
             RootFrame.Navigate(typeof(LoginPage));
         }
     }

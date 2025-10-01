@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-10-01T15:13:42.215</Modified>
+      <Modified>2025-10-01T16:22:46.106</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -40,11 +40,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>App1.exe</PackagePath>
-      <Modified>2025-10-01T15:13:41.793</Modified>
+      <Modified>2025-10-01T16:22:45.669</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App1.dll">
       <PackagePath>App1.dll</PackagePath>
-      <Modified>2025-10-01T15:13:41.778</Modified>
+      <Modified>2025-10-01T16:22:45.653</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.20\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -972,7 +972,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-10-01T15:13:41.887</Modified>
+      <Modified>2025-10-01T16:22:45.794</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
