@@ -574,3 +574,13 @@ C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.1904
 C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\SecondQuestionPage.xbf
 C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\FinalQuestionPage.xbf
 C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\SecondQuestionPage.xbf
+E:\code_C#\WP\App1\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\FinalQuestionPage.xbf
+E:\code_C#\WP\App1\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\SecondQuestionPage.xbf
+E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\FinalQuestionPage.g.i.cs
+E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\FinalQuestionPage.g.cs
+E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\SecondQuestionPage.g.i.cs
+E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\SecondQuestionPage.g.cs
+E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\FinalQuestionPage.xaml
+E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\SecondQuestionPage.xaml
+E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\FinalQuestionPage.xbf
+E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\SecondQuestionPage.xbf

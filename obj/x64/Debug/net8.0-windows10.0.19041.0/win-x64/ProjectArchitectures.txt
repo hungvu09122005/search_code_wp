@@ -1,1 +1,1 @@
-C:\Users\lechi\source\repos\search_code_wp\App1.csproj;x64
+E:\code_C#\WP\App1\App1.csproj;x64
