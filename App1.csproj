@@ -15,6 +15,7 @@
   <ItemGroup>
     <None Remove="Assets\escapeRoomBackground.jpg" />
     <None Remove="Assets\imageLogin.png" />
+    <None Remove="BlankPage1.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -60,6 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Window\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="BlankPage1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!--

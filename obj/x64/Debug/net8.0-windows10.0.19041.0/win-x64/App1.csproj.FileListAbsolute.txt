@@ -281,3 +281,8 @@ E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\First
 E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\HomePage.xbf
 E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\LoginPage.xbf
 E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\MainWindow.xbf
+E:\code_C#\WP\App1\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\BlankPage1.xbf
+E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\BlankPage1.g.i.cs
+E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\BlankPage1.g.cs
+E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\BlankPage1.xaml
+E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\BlankPage1.xbf

@@ -5,6 +5,9 @@
     <None Update="App.xaml">
       <SubType>Designer</SubType>
     </None>
+    <Page Update="BlankPage1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <None Update="Package.appxmanifest">
       <SubType>Designer</SubType>
     </None>

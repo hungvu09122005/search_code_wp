@@ -29,7 +29,7 @@
     <AppXManifest Include="E:\code_C#\WP\App1\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-09-30T08:46:24.021</Modified>
+      <Modified>2025-10-01T08:43:13.997</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -39,11 +39,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>App1.exe</PackagePath>
-      <Modified>2025-09-30T08:46:23.682</Modified>
+      <Modified>2025-10-01T08:43:12.919</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App1.dll">
       <PackagePath>App1.dll</PackagePath>
-      <Modified>2025-09-30T08:46:23.682</Modified>
+      <Modified>2025-10-01T08:43:12.794</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\VU QUOC VIET\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.20\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -927,11 +927,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\code_C#\WP\App1\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App1.deps.json">
       <PackagePath>App1.deps.json</PackagePath>
-      <Modified>2025-09-30T08:20:10.523</Modified>
+      <Modified>2025-10-01T08:39:23.215</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\code_C#\WP\App1\Assets\escapeRoomBackground.jpg">
       <PackagePath>Assets\escapeRoomBackground.jpg</PackagePath>
-      <Modified>2025-09-29T11:57:17.099</Modified>
+      <Modified>2025-10-01T04:57:54.498</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\code_C#\WP\App1\Assets\imageLogin.png">
       <PackagePath>Assets\imageLogin.png</PackagePath>
@@ -971,7 +971,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\code_C#\WP\App1\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-09-30T08:23:02.839</Modified>
+      <Modified>2025-10-01T08:39:23.767</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
