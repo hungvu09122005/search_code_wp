@@ -226,39 +226,43 @@ namespace App1.App1_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[15];
+            _typeNameTable = new string[17];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
             _typeNameTable[3] = "Boolean";
-            _typeNameTable[4] = "App1.FirstQuestionPage";
+            _typeNameTable[4] = "App1.Window.FinalQuestionPage";
             _typeNameTable[5] = "Microsoft.UI.Xaml.Controls.Page";
             _typeNameTable[6] = "Microsoft.UI.Xaml.Controls.UserControl";
-            _typeNameTable[7] = "App1.HomePage";
-            _typeNameTable[8] = "App1.LoginPage";
-            _typeNameTable[9] = "App1.MainWindow";
-            _typeNameTable[10] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[11] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[12] = "Microsoft.UI.Xaml.DependencyObject";
-            _typeNameTable[13] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
-            _typeNameTable[14] = "Int32";
+            _typeNameTable[7] = "App1.FirstQuestionPage";
+            _typeNameTable[8] = "App1.HomePage";
+            _typeNameTable[9] = "App1.LoginPage";
+            _typeNameTable[10] = "App1.MainWindow";
+            _typeNameTable[11] = "Microsoft.UI.Xaml.Window";
+            _typeNameTable[12] = "App1.Window.SecondQuestionPage";
+            _typeNameTable[13] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[14] = "Microsoft.UI.Xaml.DependencyObject";
+            _typeNameTable[15] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[16] = "Int32";
 
-            _typeTable = new global::System.Type[15];
+            _typeTable = new global::System.Type[17];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
             _typeTable[3] = typeof(global::System.Boolean);
-            _typeTable[4] = typeof(global::App1.FirstQuestionPage);
+            _typeTable[4] = typeof(global::App1.Window.FinalQuestionPage);
             _typeTable[5] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
             _typeTable[6] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
-            _typeTable[7] = typeof(global::App1.HomePage);
-            _typeTable[8] = typeof(global::App1.LoginPage);
-            _typeTable[9] = typeof(global::App1.MainWindow);
-            _typeTable[10] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[11] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[12] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
-            _typeTable[13] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
-            _typeTable[14] = typeof(global::System.Int32);
+            _typeTable[7] = typeof(global::App1.FirstQuestionPage);
+            _typeTable[8] = typeof(global::App1.HomePage);
+            _typeTable[9] = typeof(global::App1.LoginPage);
+            _typeTable[10] = typeof(global::App1.MainWindow);
+            _typeTable[11] = typeof(global::Microsoft.UI.Xaml.Window);
+            _typeTable[12] = typeof(global::App1.Window.SecondQuestionPage);
+            _typeTable[13] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[14] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
+            _typeTable[15] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[16] = typeof(global::System.Int32);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -294,18 +298,22 @@ namespace App1.App1_XamlTypeInfo
         }
 
         private object Activate_0_XamlControlsResources() { return new global::Microsoft.UI.Xaml.Controls.XamlControlsResources(); }
-        private object Activate_4_FirstQuestionPage() { return new global::App1.FirstQuestionPage(); }
-        private object Activate_7_HomePage() { return new global::App1.HomePage(); }
-        private object Activate_8_LoginPage() { return new global::App1.LoginPage(); }
-        private object Activate_9_MainWindow() { return new global::App1.MainWindow(); }
-        private object Activate_11_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_4_FinalQuestionPage() { return new global::App1.Window.FinalQuestionPage(); }
+        private object Activate_7_FirstQuestionPage() { return new global::App1.FirstQuestionPage(); }
+        private object Activate_8_HomePage() { return new global::App1.HomePage(); }
+        private object Activate_9_LoginPage() { return new global::App1.LoginPage(); }
+        private object Activate_10_MainWindow() { return new global::App1.MainWindow(); }
+        private object Activate_12_SecondQuestionPage() { return new global::App1.Window.SecondQuestionPage(); }
+        private object Activate_13_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
-        private void StaticInitializer_4_FirstQuestionPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::App1.FirstQuestionPage).TypeHandle);
-        private void StaticInitializer_7_HomePage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::App1.HomePage).TypeHandle);
-        private void StaticInitializer_8_LoginPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::App1.LoginPage).TypeHandle);
-        private void StaticInitializer_9_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::App1.MainWindow).TypeHandle);
-        private void StaticInitializer_11_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_13_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_4_FinalQuestionPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::App1.Window.FinalQuestionPage).TypeHandle);
+        private void StaticInitializer_7_FirstQuestionPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::App1.FirstQuestionPage).TypeHandle);
+        private void StaticInitializer_8_HomePage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::App1.HomePage).TypeHandle);
+        private void StaticInitializer_9_LoginPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::App1.LoginPage).TypeHandle);
+        private void StaticInitializer_10_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::App1.MainWindow).TypeHandle);
+        private void StaticInitializer_12_SecondQuestionPage() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::App1.Window.SecondQuestionPage).TypeHandle);
+        private void StaticInitializer_13_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_15_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -313,7 +321,7 @@ namespace App1.App1_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
         }
-        private void VectorAdd_13_IList(object instance, object item)
+        private void VectorAdd_15_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -351,10 +359,10 @@ namespace App1.App1_XamlTypeInfo
                 xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  App1.FirstQuestionPage
+            case 4:   //  App1.Window.FinalQuestionPage
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_FirstQuestionPage;
-                userType.StaticInitializer = StaticInitializer_4_FirstQuestionPage;
+                userType.Activator = Activate_4_FinalQuestionPage;
+                userType.StaticInitializer = StaticInitializer_4_FinalQuestionPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -367,38 +375,54 @@ namespace App1.App1_XamlTypeInfo
                 xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  App1.HomePage
+            case 7:   //  App1.FirstQuestionPage
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_HomePage;
-                userType.StaticInitializer = StaticInitializer_7_HomePage;
+                userType.Activator = Activate_7_FirstQuestionPage;
+                userType.StaticInitializer = StaticInitializer_7_FirstQuestionPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  App1.LoginPage
+            case 8:   //  App1.HomePage
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_LoginPage;
-                userType.StaticInitializer = StaticInitializer_8_LoginPage;
+                userType.Activator = Activate_8_HomePage;
+                userType.StaticInitializer = StaticInitializer_8_HomePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  App1.MainWindow
+            case 9:   //  App1.LoginPage
+                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_9_LoginPage;
+                userType.StaticInitializer = StaticInitializer_9_LoginPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 10:   //  App1.MainWindow
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.Activator = Activate_9_MainWindow;
-                userType.StaticInitializer = StaticInitializer_9_MainWindow;
+                userType.Activator = Activate_10_MainWindow;
+                userType.StaticInitializer = StaticInitializer_10_MainWindow;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  Microsoft.UI.Xaml.Window
+            case 11:   //  Microsoft.UI.Xaml.Window
                 xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 11:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 12:   //  App1.Window.SecondQuestionPage
+                userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_12_SecondQuestionPage;
+                userType.StaticInitializer = StaticInitializer_12_SecondQuestionPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 13:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_11_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_11_TreeViewNode;
+                userType.Activator = Activate_13_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_13_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -410,19 +434,19 @@ namespace App1.App1_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 12:   //  Microsoft.UI.Xaml.DependencyObject
+            case 14:   //  Microsoft.UI.Xaml.DependencyObject
                 xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 13:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 15:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::App1.App1_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_13_IList;
-                userType.CollectionAdd = VectorAdd_13_IList;
+                userType.StaticInitializer = StaticInitializer_15_IList;
+                userType.CollectionAdd = VectorAdd_15_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 14:   //  Int32
+            case 16:   //  Int32
                 xamlType = new global::App1.App1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }

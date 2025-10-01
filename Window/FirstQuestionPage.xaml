@@ -9,6 +9,11 @@
     mc:Ignorable="d">
 
     <Grid>
+        <StackPanel Padding="20">
+            <TextBlock x:Name="TitleTextBlock" FontSize="24" FontWeight="Bold" TextWrapping="Wrap"/>
+            <TextBlock x:Name="BodyTextBlock" Margin="0,10,0,20" FontSize="18" TextWrapping="Wrap"/>
+            <StackPanel x:Name="AnswerList" />
+        </StackPanel>
 
     </Grid>
 </Page>
