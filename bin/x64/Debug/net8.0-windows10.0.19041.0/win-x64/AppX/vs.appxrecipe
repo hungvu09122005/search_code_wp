@@ -29,37 +29,21 @@
     <AppXManifest Include="E:\code_C#\WP\App1\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-<<<<<<< HEAD
-      <Modified>2025-10-01T11:54:19.558</Modified>
-=======
       <Modified>2025-10-01T15:29:14.100</Modified>
->>>>>>> long
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\code_C#\WP\App1\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App1.runtimeconfig.json">
       <PackagePath>App1.runtimeconfig.json</PackagePath>
-<<<<<<< HEAD
-      <Modified>2025-10-01T11:54:18.593</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
-      <PackagePath>App1.exe</PackagePath>
-      <Modified>2025-10-01T11:54:17.444</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App1.dll">
-      <PackagePath>App1.dll</PackagePath>
-      <Modified>2025-10-01T11:54:17.415</Modified>
-=======
       <Modified>2025-10-01T12:26:57.525</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>App1.exe</PackagePath>
-      <Modified>2025-10-01T15:29:12.450</Modified>
+      <Modified>2025-10-01T15:31:48.754</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\code_C#\WP\App1\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App1.dll">
       <PackagePath>App1.dll</PackagePath>
-      <Modified>2025-10-01T15:29:12.419</Modified>
->>>>>>> long
+      <Modified>2025-10-01T15:31:48.754</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\VU QUOC VIET\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.20\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -943,45 +927,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\code_C#\WP\App1\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App1.deps.json">
       <PackagePath>App1.deps.json</PackagePath>
-<<<<<<< HEAD
-      <Modified>2025-10-01T11:54:18.491</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\code_C#\WP\App1\Assets\escapeRoomBackground.jpg">
-      <PackagePath>Assets\escapeRoomBackground.jpg</PackagePath>
-      <Modified>2025-10-01T11:43:09.342</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\code_C#\WP\App1\Assets\imageLogin.png">
-      <PackagePath>Assets\imageLogin.png</PackagePath>
-      <Modified>2025-10-01T10:27:38.445</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\code_C#\WP\App1\Assets\LockScreenLogo.scale-200.png">
-      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2025-10-01T10:27:38.422</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\code_C#\WP\App1\Assets\SplashScreen.scale-200.png">
-      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
-      <Modified>2025-10-01T10:27:38.422</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\code_C#\WP\App1\Assets\Square150x150Logo.scale-200.png">
-      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
-      <Modified>2025-10-01T10:27:38.422</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\code_C#\WP\App1\Assets\Square44x44Logo.scale-200.png">
-      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
-      <Modified>2025-10-01T10:27:38.422</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\code_C#\WP\App1\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
-      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
-      <Modified>2025-10-01T10:27:38.422</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\code_C#\WP\App1\Assets\StoreLogo.png">
-      <PackagePath>Assets\StoreLogo.png</PackagePath>
-      <Modified>2025-10-01T10:27:38.422</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\code_C#\WP\App1\Assets\Wide310x150Logo.scale-200.png">
-      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
-      <Modified>2025-10-01T10:27:38.422</Modified>
-=======
       <Modified>2025-10-01T15:29:13.299</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\code_C#\WP\App1\Assets\escapeRoomBackground.jpg">
@@ -1019,7 +964,6 @@
     <AppxPackagedFile Include="E:\code_C#\WP\App1\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <Modified>2025-10-01T12:10:20.764</Modified>
->>>>>>> long
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\VU QUOC VIET\.nuget\packages\microsoft.web.webview2\1.0.3179.45\build\..\lib\Microsoft.Web.WebView2.Core.winmd">
       <PackagePath>Microsoft.Web.WebView2.Core.winmd</PackagePath>
@@ -1027,11 +971,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\code_C#\WP\App1\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-<<<<<<< HEAD
-      <Modified>2025-10-01T11:54:18.914</Modified>
-=======
       <Modified>2025-10-01T15:29:13.600</Modified>
->>>>>>> long
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
