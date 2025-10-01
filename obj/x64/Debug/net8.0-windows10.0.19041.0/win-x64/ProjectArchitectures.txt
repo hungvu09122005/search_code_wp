@@ -1,0 +1,1 @@
+E:\code_C#\WP\App1\App1.csproj;x64
