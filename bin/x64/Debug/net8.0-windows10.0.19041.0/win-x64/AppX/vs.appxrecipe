@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-10-01T07:49:00.454</Modified>
+      <Modified>2025-10-01T10:13:06.269</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -40,11 +40,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>App1.exe</PackagePath>
-      <Modified>2025-10-01T07:49:00.145</Modified>
+      <Modified>2025-10-01T10:13:05.951</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App1.dll">
       <PackagePath>App1.dll</PackagePath>
-      <Modified>2025-10-01T07:49:00.141</Modified>
+      <Modified>2025-10-01T10:13:05.948</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.20\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -928,7 +928,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\App1.deps.json">
       <PackagePath>App1.deps.json</PackagePath>
-      <Modified>2025-10-01T07:48:48.779</Modified>
+      <Modified>2025-10-01T08:58:45.989</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\Assets\escapeRoomBackground.jpg">
       <PackagePath>Assets\escapeRoomBackground.jpg</PackagePath>
@@ -972,7 +972,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-10-01T07:48:48.920</Modified>
+      <Modified>2025-10-01T10:09:03.904</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

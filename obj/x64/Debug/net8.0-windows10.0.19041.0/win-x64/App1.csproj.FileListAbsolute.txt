@@ -564,3 +564,13 @@ C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.1904
 C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ProjectArchitectures.txt
 C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\.winmd_cache\$Microsoft.Web.WebView2.Core.winmd_638789222360000000.json
+C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\FinalQuestionPage.g.i.cs
+C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\FinalQuestionPage.g.cs
+C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\SecondQuestionPage.g.i.cs
+C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\SecondQuestionPage.g.cs
+C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\FinalQuestionPage.xaml
+C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\SecondQuestionPage.xaml
+C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\FinalQuestionPage.xbf
+C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\SecondQuestionPage.xbf
+C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\FinalQuestionPage.xbf
+C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Window\SecondQuestionPage.xbf

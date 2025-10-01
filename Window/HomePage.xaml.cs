@@ -27,10 +27,12 @@ namespace App1;
 /// </summary>
 public sealed partial class HomePage : Page
 {
+
     public HomePage()
     {
         this.InitializeComponent();
     }
+
     protected override void OnNavigatedTo(NavigationEventArgs e)
     {
         base.OnNavigatedTo(e);
