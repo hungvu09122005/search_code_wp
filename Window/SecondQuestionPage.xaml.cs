@@ -14,30 +14,34 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
-
 namespace App1.Window
 {
+    /// <summary>
+    /// Trang hiển thị câu hỏi thứ hai và xử lý lựa chọn đáp án của người dùng.
+    /// </summary>
     public sealed partial class SecondQuestionPage : Page
     {
-        private QuestionData question;
+        /// <summary>
+        /// Dữ liệu câu hỏi hiện tại.
+        /// </summary>
+        private QuestionData? question;
 
+        /// <summary>
+        /// Khởi tạo trang SecondQuestionPage.
+        /// </summary>
         public SecondQuestionPage()
         {
             this.InitializeComponent();
-
-            // Tạo câu hỏi
-            question = new QuestionData("What is the largest planet in our Solar System?", "Chọn đáp án đúng:");
-
-            question.AddAnswer("Earth", false);
-            question.AddAnswer("Jupiter", true);
-            question.AddAnswer("Mars", false);
         }
 
+        /// <summary>
+        /// Được gọi khi điều hướng đến trang này. Thiết lập dữ liệu câu hỏi và hiển thị lên giao diện.
+        /// </summary>
+        /// <param name="e">Tham số sự kiện điều hướng.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            question = Data.QuestionRepository.Questions[1];
 
             TitleTextBlock.Text = question.Title;
             BodyTextBlock.Text = question.Body;
@@ -50,36 +54,58 @@ namespace App1.Window
                     Tag = ans.IsCorrect,
                     Margin = new Thickness(0, 5, 0, 5)
                 };
-                btn.Click += AnswerButton_Click;
-                AnswerList.Children.Add(btn);
+                btn.Click += AnswerButtonClick;
+                AnswerList.ItemsSource = question.Answers;
             }
         }
 
-        private async void AnswerButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Xử lý sự kiện khi người dùng chọn một đáp án.
+        /// Hiển thị thông báo đúng/sai và điều hướng trang phù hợp.
+        /// </summary>
+        /// <param name="sender">Nút được nhấn.</param>
+        /// <param name="e">Tham số sự kiện.</param>
+        private async void AnswerButtonClick(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
-
             if (btn?.Tag is bool isCorrect)
             {
-                var dialog = new ContentDialog
-                {
-                    Title = isCorrect ? "Correct!" : "Wrong!",
-                    Content = isCorrect ? "Bạn đã chọn đáp án đúng!" : "Đáp án sai, bạn sẽ quay về trang HomePage.",
-                    CloseButtonText = "OK",
-                    XamlRoot = this.XamlRoot
-                };
-
-                await dialog.ShowAsync();
-
                 if (isCorrect)
                 {
-                    // Nếu đúng → chuyển sang FinalQuestionPage
+                    var correctDialog = new ContentDialog
+                    {
+                        Title = "Correct!",
+                        Content = "You answered correctly!",
+                        CloseButtonText = "OK",
+                        XamlRoot = this.XamlRoot
+                    };
+
+                    await correctDialog.ShowAsync();
                     Frame.Navigate(typeof(FinalQuestionPage));
                 }
                 else
                 {
-                    // Nếu sai → quay về HomePage
-                    Frame.Navigate(typeof(HomePage));
+                    var wrongDialog = new ContentDialog
+                    {
+                        Title = "Dead End!",
+                        Content = "You've reached a dead end.\nYou can choose to go back to the previous door or start over from the beginning.",
+                        PrimaryButtonText = "Go Back",
+                        SecondaryButtonText = "Home",
+                        DefaultButton = ContentDialogButton.Primary,
+                        XamlRoot = this.XamlRoot
+                    };
+
+                    var result = await wrongDialog.ShowAsync();
+
+                    if (result == ContentDialogResult.Primary)
+                    {
+                        // Quay lại trang hiện tại
+                        Frame.GoBack();
+                    }
+                    else if (result == ContentDialogResult.Secondary)
+                    {
+                        Frame.Navigate(typeof(HomePage), App1.Data.UserState.Name);
+                    }
                 }
             }
         }

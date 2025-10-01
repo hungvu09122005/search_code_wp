@@ -16,6 +16,7 @@
     <None Remove="Assets\escapeRoomBackground.jpg" />
     <None Remove="Assets\imageLogin.png" />
     <None Remove="Window\FinalQuestionPage.xaml" />
+    <None Remove="Window\ResultPage.xaml" />
     <None Remove="Window\SecondQuestionPage.xaml" />
   </ItemGroup>
 
@@ -44,6 +45,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.6584" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.250916003" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Window\ResultPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Window\FinalQuestionPage.xaml">

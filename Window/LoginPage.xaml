@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    LoginPage.xaml
+    Trang đăng nhập cho ứng dụng App1.
+
+    - Hiển thị hình ảnh logo đăng nhập.
+    - Cho phép người dùng nhập tên.
+    - Nút "Enter" để xác nhận tên người dùng.
+    - Sử dụng StackPanel để căn giữa các thành phần.
+    - Tùy chỉnh màu sắc và giao diện nút bấm.
+-->
 <Page
     x:Class="App1.LoginPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -9,14 +19,28 @@
     mc:Ignorable="d">
 
     <Grid>
+        <!--
+            StackPanel căn giữa các thành phần theo chiều dọc và ngang.
+            Spacing: Khoảng cách giữa các thành phần là 10.
+        -->
         <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Spacing="10">
+            <!--
+                Hình ảnh logo đăng nhập.
+                Nguồn: Assets/imageLogin.png
+                Kích thước: 150x150
+            -->
             <Image Source="ms-appx:///Assets/imageLogin.png" 
                    Width="150" Height="150" 
                    Margin="10" 
                    HorizontalAlignment="Center"/>
 
+            <!--
+                TextBox cho phép nhập tên người dùng.
+                PlaceholderText: "Name"
+                Header: "Enter your name:" với màu và kiểu chữ tùy chỉnh.
+            -->
             <TextBox x:Name="NameUser"
                     PlaceholderText="Name"
                     FontWeight="SemiBold"
@@ -29,23 +53,27 @@
                 </TextBox.Header>
             </TextBox>
 
-
-            <!-- Nút Enter, màu trắng, không đổi khi hover hoặc click -->
+            <!--
+                Nút "Enter" xác nhận tên người dùng.
+                - Màu nền: #5A2A7A
+                - Chữ trắng, đậm.
+                - Không đổi màu khi hover hoặc click (giữ nguyên màu trắng).
+                - Sử dụng sự kiện Click="SaluteClick".
+            -->
             <Button Width="90" Height="30"
                     HorizontalAlignment="Center"
                     Background="#5A2A7A"
                     FontWeight="Bold"
                     Click="SaluteClick">    
                 <Button.Resources>
-                    <!-- Brush khi hover -->
+                    <!--
+                        Brush khi hover và click: #7B4EB3
+                    -->
                     <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#7B4EB3"/>
-                    <!-- Brush khi click -->
                     <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#7B4EB3"/>
                 </Button.Resources>
                 <TextBlock Text="Enter" Foreground="White"/>
             </Button>
-
-
         </StackPanel>
     </Grid>
 </Page>
