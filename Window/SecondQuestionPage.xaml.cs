@@ -21,23 +21,17 @@ namespace App1.Window
 {
     public sealed partial class SecondQuestionPage : Page
     {
-        private QuestionData question;
+        private QuestionData? question;
 
         public SecondQuestionPage()
         {
             this.InitializeComponent();
-
-            // Tạo câu hỏi
-            question = new QuestionData("What is the largest planet in our Solar System?", "Chọn đáp án đúng:");
-
-            question.AddAnswer("Earth", false);
-            question.AddAnswer("Jupiter", true);
-            question.AddAnswer("Mars", false);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            question = Data.QuestionRepository.Questions[1];
 
             TitleTextBlock.Text = question.Title;
             BodyTextBlock.Text = question.Body;
@@ -50,38 +44,57 @@ namespace App1.Window
                     Tag = ans.IsCorrect,
                     Margin = new Thickness(0, 5, 0, 5)
                 };
-                btn.Click += AnswerButton_Click;
-                AnswerList.Children.Add(btn);
+                btn.Click += AnswerButtonClick;
+                AnswerList.ItemsSource = question.Answers;
             }
         }
 
-        private async void AnswerButton_Click(object sender, RoutedEventArgs e)
+        private async void AnswerButtonClick(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
-
             if (btn?.Tag is bool isCorrect)
             {
-                var dialog = new ContentDialog
-                {
-                    Title = isCorrect ? "Correct!" : "Wrong!",
-                    Content = isCorrect ? "Bạn đã chọn đáp án đúng!" : "Đáp án sai, bạn sẽ quay về trang HomePage.",
-                    CloseButtonText = "OK",
-                    XamlRoot = this.XamlRoot
-                };
-
-                await dialog.ShowAsync();
-
                 if (isCorrect)
                 {
-                    // Nếu đúng → chuyển sang FinalQuestionPage
+                    var correctDialog = new ContentDialog
+                    {
+                        Title = "Correct!",
+                        Content = "You answered correctly!",
+                        CloseButtonText = "OK",
+                        XamlRoot = this.XamlRoot
+                    };
+
+
+                    await correctDialog.ShowAsync();
                     Frame.Navigate(typeof(FinalQuestionPage));
                 }
                 else
                 {
-                    // Nếu sai → quay về HomePage
-                    Frame.Navigate(typeof(HomePage));
+                    var wrongDialog = new ContentDialog
+                    {
+                        Title = "Dead End!",
+                        Content = "You've reached a dead end.\nYou can choose to go back to the previous door or start over from the beginning.",
+                        PrimaryButtonText = "Go Back",
+                        SecondaryButtonText = "Home",
+                        DefaultButton = ContentDialogButton.Primary,
+                        XamlRoot = this.XamlRoot
+                    };
+
+
+                    var result = await wrongDialog.ShowAsync();
+
+                    if (result == ContentDialogResult.Primary)
+                    {
+                        // Quay lại trang hiện tại
+                        Frame.GoBack(); // hoặc dùng Frame.GoBack() nếu phù hợp
+                    }
+                    else if (result == ContentDialogResult.Secondary)
+                    {
+                        Frame.Navigate(typeof(HomePage), App1.Data.UserState.Name);
+                    }
                 }
             }
         }
+
     }
 }
