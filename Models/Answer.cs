@@ -3,7 +3,7 @@ using Microsoft.UI.Xaml.Controls;
 using System;
 using System.Threading.Tasks;
 
-namespace App1.Moduls
+namespace App1.Models
 {
     public class Answer
     {
