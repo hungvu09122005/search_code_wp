@@ -1,4 +1,4 @@
-using Microsoft.UI;
+﻿using Microsoft.UI;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -19,20 +19,20 @@ using WinRT.Interop;
 namespace App1
 {
     /// <summary>
-    /// M?t c?a s? tr?ng c� th? ???c s? d?ng ??c l?p ho?c ?i?u h??ng trong m?t Frame.
+    /// Một cửa sổ trống có thể được sử dụng độc lập hoặc điều hướng trong một Frame.
     /// </summary>
     public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
     {
         /// <summary>
-        /// Kh?i t?o m?t th? hi?n m?i c?a l?p <see cref="MainWindow"/>.
-        /// Thi?t l?p k�ch th??c c?a s? v� ?i?u h??ng ??n trang ??ng nh?p.
+        /// Khởi tạo một thể hiện mới của lớp <see cref="MainWindow"/>.
+        /// Thiết lập kích thước cửa sổ và điều hướng đến trang đăng nhập.
         /// </summary>
         public MainWindow()
         {
             this.InitializeComponent();
             var currentWindow = this;
 
-            // L?y handle c?a s? hi?n t?i
+            // Lấy handle của cửa sổ hiện tại
             IntPtr hWnd = WindowNative.GetWindowHandle(this);
             WindowId windowId = Win32Interop.GetWindowIdFromWindow(hWnd);
             AppWindow appWindow = AppWindow.GetFromWindowId(windowId);
@@ -40,9 +40,9 @@ namespace App1
             int width = 1980;
             int height = 1024;
 
-            // ??t l?i k�ch th??c c?a s?
+            // Đặt lại kích thước cửa sổ
             appWindow.Resize(new Windows.Graphics.SizeInt32(width, height));
-            // ?i?u h??ng ??n trang ??ng nh?p
+            // Điều hướng đến trang đăng nhập
             RootFrame.Navigate(typeof(LoginPage));
         }
     }

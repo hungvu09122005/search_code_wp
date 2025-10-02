@@ -1,7 +1,7 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace App1.Models
+namespace App1.Moduls
 {
     public static class Dialogs
     {

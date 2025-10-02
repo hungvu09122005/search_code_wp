@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace App1.Models
+namespace App1.Moduls
 {
     public class QuestionData
     {
