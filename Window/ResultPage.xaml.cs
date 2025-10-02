@@ -36,5 +36,10 @@ namespace App1.Window
         {
             Frame.Navigate(typeof(HomePage), App1.Data.UserState.Name);
         }
+
+        private void ExitGameClick(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
     }
 }

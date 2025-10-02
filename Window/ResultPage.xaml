@@ -56,6 +56,17 @@
                 CornerRadius="12"
                 BorderThickness="0"
                 HorizontalAlignment="Center"/>
+            
+            <Button Content="Exit Game"
+                    Click="ExitGameClick"
+                    Width="180"
+                    Height="50"
+                    FontSize="18"
+                    Background="#5A2A7A"
+                    Foreground="White"
+                    CornerRadius="12"
+                    BorderThickness="0"
+                    HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 

@@ -73,30 +73,14 @@ namespace App1.Window
             {
                 if (isCorrect)
                 {
-                    var correctDialog = new ContentDialog
-                    {
-                        Title = "Correct!",
-                        Content = "You answered correctly!",
-                        CloseButtonText = "OK",
-                        XamlRoot = this.XamlRoot
-                    };
-
-                    await correctDialog.ShowAsync();
+                    var dialog = Dialogs.CreateCorrectDialog(this.XamlRoot);
+                    await dialog.ShowAsync();
                     Frame.Navigate(typeof(ResultPage));
                 }
                 else
                 {
-                    var wrongDialog = new ContentDialog
-                    {
-                        Title = "Dead End!",
-                        Content = "You've reached a dead end.\nYou can choose to go back to the previous door or start over from the beginning.",
-                        PrimaryButtonText = "Go Back",
-                        SecondaryButtonText = "Home",
-                        DefaultButton = ContentDialogButton.Primary,
-                        XamlRoot = this.XamlRoot
-                    };
-
-                    var result = await wrongDialog.ShowAsync();
+                    var dialog = Dialogs.CreateWrongDialog(this.XamlRoot);
+                    var result = await dialog.ShowAsync();
 
                     if (result == ContentDialogResult.Primary)
                     {

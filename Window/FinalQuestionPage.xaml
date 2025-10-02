@@ -95,7 +95,7 @@
                             Margin="20 5 20 5"
                             FontSize="16"
                             MinWidth="80"
-                            Background="LightGray"
+                            Background="#1E1E1E"
                             CornerRadius="8"
                             HorizontalAlignment="Center"/>
                 </DataTemplate>
