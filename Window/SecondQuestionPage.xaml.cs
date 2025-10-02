@@ -43,7 +43,7 @@ namespace App1.Window
             base.OnNavigatedTo(e);
             question = Data.QuestionRepository.Questions[1];
 
-            TitleTextBlock.Text = question.Title;
+            TitleTextBlock.Content = question.Title;
             BodyTextBlock.Text = question.Body;
 
             foreach (var ans in question.Answers)
@@ -81,12 +81,7 @@ namespace App1.Window
                     var dialog = Dialogs.CreateWrongDialog(this.XamlRoot);
                     var result = await dialog.ShowAsync();
 
-                    if (result == ContentDialogResult.Primary)
-                    {
-                        // Quay lại trang hiện tại
-                        Frame.GoBack();
-                    }
-                    else if (result == ContentDialogResult.Secondary)
+                    if (result == ContentDialogResult.Secondary)
                     {
                         Frame.Navigate(typeof(HomePage), App1.Data.UserState.Name);
                     }

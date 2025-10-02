@@ -24,42 +24,51 @@
                 MinWidth="600"
                 Spacing="10">
 
-        <!--
+            <!--
             TitleTextBlock: Hiển thị tiêu đề của câu hỏi.
-            - FontSize="24": Cỡ chữ lớn.
-            - FontWeight="Bold": Chữ đậm.
-            - Foreground="White": Màu chữ trắng.
-            - TextAlignment="Left": Căn trái.
-            - Margin="0": Không có lề.
-        -->
-        <TextBlock x:Name="TitleTextBlock"
-                   FontSize="24"
-                   FontWeight="Bold"
-                   Foreground="White"
-                   TextAlignment="Left"
-                   Margin="0"/>
+            - FontSize: Cỡ chữ lớn.
+            - FontWeight: In đậm.
+            - Foreground: Màu chữ trắng.
+            - Margin: Khoảng cách dưới 10px.
+            -->
+            <Button x:Name="TitleTextBlock"
+                    FontSize="24"
+                    FontWeight="Bold"
+                    Foreground="White"
+                    Background="#AA000000"
+                    BorderThickness="2"
+                    Padding="10"
+                    HorizontalAlignment="Left"
+                    Margin="0,0,0,10"
+                    IsHitTestVisible="False"/>
 
-        <!--
+            <!--
             BodyTextBlock: Hiển thị nội dung chi tiết của câu hỏi.
-            - FontSize="18": Cỡ chữ vừa.
-            - Foreground="LightBlue": Màu chữ xanh nhạt.
-            - TextWrapping="Wrap": Tự động xuống dòng.
-            - TextAlignment="Left": Căn trái.
-            - Margin="100,0,0,0": Lề trái 100.
-        -->
-        <TextBlock x:Name="BodyTextBlock"
-                   FontSize="18"
-                   Foreground="LightGray"
-                   TextWrapping="Wrap"
-                   TextAlignment="Left"
-                   Margin="100,0,0,0"/>
+            - FontSize: Cỡ chữ vừa.
+            - Foreground: Màu chữ xám nhạt.
+            - TextWrapping: Tự động xuống dòng.
+            -->
+            <Button x:Name="BodyButton"
+                    Background="#AA000000"
+                    BorderThickness="2"
+                    Padding="10"
+                    HorizontalAlignment="Left"
+                    Width="800"
+                    IsHitTestVisible="False">
+                <TextBlock x:Name="BodyTextBlock"
+                           FontSize="24"
+                           Foreground="White"
+                           TextWrapping="Wrap"
+                           Width="750"
+                           TextTrimming="CharacterEllipsis"/>
+            </Button>
 
-        <!--
+            <!--
             AnswerList: Danh sách các đáp án cho câu hỏi.
             - Sử dụng ItemsControl để hiển thị danh sách đáp án.
             - ItemsPanel là StackPanel nằm ngang, căn giữa.
             - Mỗi đáp án là một Button với nội dung và trạng thái đúng/sai.
-        -->
+            -->
         <ItemsControl x:Name="AnswerList">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
