@@ -3,7 +3,7 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 
-namespace App1.Moduls
+namespace App1.Modulo
 {
     /// <summary>
     /// Load câu hỏi từ QuestionRepository theo chỉ số (index) và hiển thị ra UI.
