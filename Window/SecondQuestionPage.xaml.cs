@@ -1,5 +1,4 @@
 ﻿using App1.Models;
-using App1.Window;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -14,14 +13,13 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using static App1.Data.QuestionRepository;
 
-namespace App1
+namespace App1.Window
 {
     /// <summary>
-    /// Trang câu hỏi đầu tiên của ứng dụng.
+    /// Trang hiển thị câu hỏi thứ hai và xử lý lựa chọn đáp án của người dùng.
     /// </summary>
-    public sealed partial class FirstQuestionPage : Page
+    public sealed partial class SecondQuestionPage : Page
     {
         /// <summary>
         /// Dữ liệu câu hỏi hiện tại.
@@ -29,22 +27,21 @@ namespace App1
         private QuestionData? question;
 
         /// <summary>
-        /// Khởi tạo trang FirstQuestionPage.
+        /// Khởi tạo trang SecondQuestionPage.
         /// </summary>
-        public FirstQuestionPage()
+        public SecondQuestionPage()
         {
             this.InitializeComponent();
         }
 
         /// <summary>
-        /// Được gọi khi điều hướng đến trang này.
-        /// Thiết lập nội dung câu hỏi và các đáp án.
+        /// Được gọi khi điều hướng đến trang này. Thiết lập dữ liệu câu hỏi và hiển thị lên giao diện.
         /// </summary>
         /// <param name="e">Tham số sự kiện điều hướng.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             App1.Models.QuestionLoader.LoadQuestion(
-                0,                     // index câu hỏi
+                1,                     // index câu hỏi
                 TitleTextBlock,        // nơi hiển thị title
                 BodyTextBlock,         // nơi hiển thị body
                 AnswerList,            // nơi chứa các button
@@ -64,7 +61,7 @@ namespace App1
                 sender as Button,
                 this.XamlRoot,
                 Frame,
-                typeof(SecondQuestionPage),   // Page tiếp theo (truyền động)
+                typeof(FinalQuestionPage),   // Page tiếp theo (truyền động)
                 App1.Data.UserState.Name      // tham số cho HomePage
             );
         }

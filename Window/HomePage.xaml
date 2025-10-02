@@ -12,15 +12,25 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock x:Name="WelcomeTextBlock"
                Style="{StaticResource SubtitleTextBlockStyle}" 
-               FontSize="28" 
+               FontSize="32"
+               Foreground="White"
                Margin="10" 
                HorizontalAlignment="Center"/>
 
-            <Button Content="Start Game" 
-            Style="{StaticResource AccentButtonStyle}" 
-            Width="150" Height="50" Margin="10" 
-            HorizontalAlignment="Center"
-            Click="StartGame"/>
+            <Button Width="120" Height="35"
+                HorizontalAlignment="Center"
+                Background="#5A2A7A"
+                Foreground="AliceBlue"
+                FontWeight="Bold"
+                Click="StartGame">  
+                <Button.Resources>
+                    <!-- Brush khi hover -->
+                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#7B4EB3"/>
+                    <!-- Brush khi click -->
+                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#7B4EB3"/>
+                </Button.Resources>
+                <TextBlock Text="Enter" Foreground="White"/>
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

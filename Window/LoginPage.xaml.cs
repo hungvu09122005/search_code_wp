@@ -23,6 +23,9 @@ namespace App1;
 /// </summary>
 public sealed partial class LoginPage : Page
 {
+    // Add this property to store the user state
+    public string? UserState { get; set; }
+
     public LoginPage()
     {
         this.InitializeComponent();
@@ -30,8 +33,8 @@ public sealed partial class LoginPage : Page
 
     private async void SaluteClick(object sender, RoutedEventArgs e)
     {
-        String nameUser = NameUser.Text;
-        if (nameUser == String.Empty)
+        App1.Data.UserState.Name = NameUser.Text;
+        if (App1.Data.UserState.Name == String.Empty)
         {
             var dialog = new ContentDialog()
             {
@@ -44,7 +47,7 @@ public sealed partial class LoginPage : Page
             return;
         }
 
-        this.Frame.Navigate(typeof(HomePage), nameUser);
+        this.Frame.Navigate(typeof(HomePage), App1.Data.UserState.Name);
     }
 }
 

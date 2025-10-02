@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Trang FirstQuestionPage: Hiển thị câu hỏi đầu tiên và các đáp án cho người dùng lựa chọn.
+    - TitleTextBlock: Hiển thị tiêu đề câu hỏi.
+    - BodyTextBlock: Hiển thị nội dung chi tiết của câu hỏi.
+    - AnswerList: Danh sách các đáp án, mỗi đáp án là một Button.
+-->
 <Page
     x:Class="App1.FirstQuestionPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -9,6 +15,89 @@
     mc:Ignorable="d">
 
     <Grid>
+        <!--
+            StackPanel căn giữa nội dung trang, giới hạn chiều rộng tối đa và tối thiểu.
+            Spacing: Khoảng cách giữa các phần tử con.
+        -->
+        <StackPanel Padding="20"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    MaxWidth="800"
+                    MinWidth="600"
+                    Spacing="10">
 
+            <!--
+                TitleTextBlock: Hiển thị tiêu đề của câu hỏi.
+                - FontSize: Cỡ chữ lớn.
+                - FontWeight: In đậm.
+                - Foreground: Màu chữ trắng.
+                - Margin: Khoảng cách dưới 10px.
+            -->
+            <Button x:Name="TitleTextBlock"
+                    FontSize="24"
+                    FontWeight="Bold"
+                    Foreground="White"
+                    Background="#AA000000"
+                    BorderThickness="2"
+                    Padding="10"
+                    HorizontalAlignment="Left"
+                    Margin="0,0,0,10"
+                    IsHitTestVisible="False"/>
+
+            <!--
+                BodyTextBlock: Hiển thị nội dung chi tiết của câu hỏi.
+                - FontSize: Cỡ chữ vừa.
+                - Foreground: Màu chữ xám nhạt.
+                - TextWrapping: Tự động xuống dòng.
+            -->
+            <Button x:Name="BodyButton"
+                    Background="#AA000000"
+                    BorderThickness="2"
+                    Padding="10"
+                    HorizontalAlignment="Left"
+                    Width="800"
+                    IsHitTestVisible="False">
+                <TextBlock x:Name="BodyTextBlock"
+                           FontSize="24"
+                           Foreground="White"
+                           TextWrapping="Wrap"
+                           Width="750"
+                           TextTrimming="CharacterEllipsis"/>
+            </Button>
+
+            <!--
+                AnswerList: Danh sách các đáp án.
+                - Sử dụng ItemsControl để hiển thị các Button đáp án theo chiều ngang.
+                - Mỗi Button hiển thị nội dung đáp án, lưu trạng thái đúng/sai qua Tag.
+            -->
+            <ItemsControl x:Name="AnswerList">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <!--
+                            Button: Đại diện cho một đáp án.
+                            - Content: Nội dung đáp án.
+                            - Tag: Lưu trạng thái đúng/sai.
+                            - Click: Sự kiện khi người dùng chọn đáp án.
+                            - Style: Kích thước, màu nền, bo góc, căn giữa.
+                        -->
+                        <Button Content="{Binding Text}"
+                                Tag="{Binding IsCorrect}"
+                                Click="AnswerButtonClick"
+                                Height="40"
+                                FontSize="16"
+                                Background="#1E1E1E"
+                                CornerRadius="8"
+                                HorizontalAlignment="Center"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
     </Grid>
 </Page>

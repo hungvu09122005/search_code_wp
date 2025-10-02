@@ -26,7 +26,7 @@ namespace App1
     /// </summary>
     public partial class App : Application
     {
-        private Window? _window;
+        private Microsoft.UI.Xaml.Window? _window;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -44,7 +44,7 @@ namespace App1
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
             _window = new MainWindow();
-            _window.Activate();
+            _window!.Activate();
         }
     }
 }

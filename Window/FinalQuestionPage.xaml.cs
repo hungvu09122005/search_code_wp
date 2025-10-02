@@ -1,5 +1,4 @@
 ﻿using App1.Models;
-using App1.Window;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -14,14 +13,13 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using static App1.Data.QuestionRepository;
 
-namespace App1
+namespace App1.Window
 {
     /// <summary>
-    /// Trang câu hỏi đầu tiên của ứng dụng.
+    /// Trang hiển thị câu hỏi cuối cùng trong ứng dụng.
     /// </summary>
-    public sealed partial class FirstQuestionPage : Page
+    public sealed partial class FinalQuestionPage : Page
     {
         /// <summary>
         /// Dữ liệu câu hỏi hiện tại.
@@ -29,9 +27,9 @@ namespace App1
         private QuestionData? question;
 
         /// <summary>
-        /// Khởi tạo trang FirstQuestionPage.
+        /// Khởi tạo một instance mới của <see cref="FinalQuestionPage"/>
         /// </summary>
-        public FirstQuestionPage()
+        public FinalQuestionPage()
         {
             this.InitializeComponent();
         }
@@ -44,7 +42,7 @@ namespace App1
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             App1.Models.QuestionLoader.LoadQuestion(
-                0,                     // index câu hỏi
+                2,                     // index câu hỏi
                 TitleTextBlock,        // nơi hiển thị title
                 BodyTextBlock,         // nơi hiển thị body
                 AnswerList,            // nơi chứa các button
@@ -64,7 +62,7 @@ namespace App1
                 sender as Button,
                 this.XamlRoot,
                 Frame,
-                typeof(SecondQuestionPage),   // Page tiếp theo (truyền động)
+                typeof(ResultPage),   // Page tiếp theo (truyền động)
                 App1.Data.UserState.Name      // tham số cho HomePage
             );
         }
