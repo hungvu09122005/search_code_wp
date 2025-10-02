@@ -40,23 +40,13 @@ namespace App1.Window
         /// <param name="e">Tham số sự kiện điều hướng.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);
-            question = Data.QuestionRepository.Questions[1];
-
-            TitleTextBlock.Content = question.Title;
-            BodyTextBlock.Text = question.Body;
-
-            foreach (var ans in question.Answers)
-            {
-                var btn = new Button
-                {
-                    Content = ans.Text,
-                    Tag = ans.IsCorrect,
-                    Margin = new Thickness(0, 5, 0, 5)
-                };
-                btn.Click += AnswerButtonClick;
-                AnswerList.ItemsSource = question.Answers;
-            }
+            App1.Models.QuestionLoader.LoadQuestion(
+                1,                     // index câu hỏi
+                TitleTextBlock,        // nơi hiển thị title
+                BodyTextBlock,         // nơi hiển thị body
+                AnswerList,            // nơi chứa các button
+                AnswerButtonClick      // event handler khi bấm đáp án
+            );
         }
 
         /// <summary>
@@ -67,26 +57,13 @@ namespace App1.Window
         /// <param name="e">Tham số sự kiện.</param>
         private async void AnswerButtonClick(object sender, RoutedEventArgs e)
         {
-            var btn = sender as Button;
-            if (btn?.Tag is bool isCorrect)
-            {
-                if (isCorrect)
-                {
-                    var dialog = Dialogs.CreateCorrectDialog(this.XamlRoot);
-                    await dialog.ShowAsync();
-                    Frame.Navigate(typeof(FinalQuestionPage));
-                }
-                else
-                {
-                    var dialog = Dialogs.CreateWrongDialog(this.XamlRoot);
-                    var result = await dialog.ShowAsync();
-
-                    if (result == ContentDialogResult.Secondary)
-                    {
-                        Frame.Navigate(typeof(HomePage), App1.Data.UserState.Name);
-                    }
-                }
-            }
+            await App1.Models.AnswerModule.HandleAnswerAsync(
+                sender as Button,
+                this.XamlRoot,
+                Frame,
+                typeof(FinalQuestionPage),   // Page tiếp theo (truyền động)
+                App1.Data.UserState.Name      // tham số cho HomePage
+            );
         }
     }
 }
