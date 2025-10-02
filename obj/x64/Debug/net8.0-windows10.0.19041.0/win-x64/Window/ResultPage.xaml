@@ -1,0 +1,74 @@
+﻿<!--
+    ResultPage.xaml
+    Trang hiển thị kết quả chúc mừng người dùng sau khi hoàn thành một tác vụ.
+    - Ảnh nền: hallway.png (Assets)
+    - Lớp phủ mờ: tạo hiệu ứng làm mờ nền
+    - Nội dung: tiêu đề chúc mừng, kết quả, nút quay về trang chủ
+-->
+
+<Page
+    x:Class="App1.Window.ResultPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1.Window"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <!-- Lớp phủ mờ màu đen với độ trong suốt, giúp nổi bật nội dung phía trên -->
+        <Rectangle Fill="#AA000000"
+               HorizontalAlignment="Stretch"
+               VerticalAlignment="Stretch"/>
+
+        <!-- StackPanel chứa nội dung chúc mừng, căn giữa màn hình -->
+        <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Padding="40"
+                Spacing="30"
+                MaxWidth="600">
+
+            <!-- Tiêu đề chúc mừng, sử dụng biểu tượng và màu sắc nổi bật -->
+            <TextBlock Text="🎉 Congratulations!"
+                   FontSize="32"
+                   FontWeight="Bold"
+                   Foreground="#03DAC5"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+            <!-- TextBlock hiển thị kết quả, có thể cập nhật động từ code-behind -->
+            <TextBlock x:ConnectionId='2' x:Name="ResultTextBlock"
+                   FontSize="20"
+                   Foreground="White"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Margin="0,10,0,0"/>
+
+            <!-- Nút quay về trang chủ, gọi sự kiện BackToHomeClick khi nhấn -->
+            <Button x:ConnectionId='3' Content="Back to Home"
+                                       
+                Width="180"
+                Height="50"
+                FontSize="18"
+                Background="#5A2A7A"
+                Foreground="White"
+                CornerRadius="12"
+                BorderThickness="0"
+                HorizontalAlignment="Center"/>
+            
+            <Button x:ConnectionId='4' Content="Exit Game"
+                                         
+                    Width="180"
+                    Height="50"
+                    FontSize="18"
+                    Background="#5A2A7A"
+                    Foreground="White"
+                    CornerRadius="12"
+                    BorderThickness="0"
+                    HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+
+</Page>
+

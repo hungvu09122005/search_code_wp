@@ -56,7 +56,7 @@
                     Width="800"
                     IsHitTestVisible="False">
                 <TextBlock x:Name="BodyTextBlock"
-                           FontSize="24"
+                           FontSize="18"
                            Foreground="White"
                            TextWrapping="Wrap"
                            Width="750"
