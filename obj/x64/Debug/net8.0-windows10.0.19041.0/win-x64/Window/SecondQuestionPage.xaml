@@ -61,7 +61,7 @@
                     Width="800"
                     IsHitTestVisible="False">
                 <TextBlock x:ConnectionId='6' x:Name="BodyTextBlock"
-                           FontSize="24"
+                           FontSize="20"
                            Foreground="White"
                            TextAlignment="Left"
                            TextWrapping="Wrap"
@@ -94,10 +94,11 @@
                         <Button x:ConnectionId='5' Content="{Binding Text}"
                             Tag="{Binding IsCorrect}"
                                                      
-                            Height="40"
-                            Margin="20 5 20 5"
-                            FontSize="16"
-                            Background="#1E1E1E"
+                            Width="230"
+                            Height="50"
+                            Margin="10 5 10 5"
+                            FontSize="20"
+                            Background="#AA000000"
                             Foreground="White"
                             CornerRadius="8"
                             HorizontalAlignment="Center"/>
