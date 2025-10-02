@@ -1,4 +1,4 @@
-﻿using App1.Models;
+﻿using App1.Moduls;
 using App1.Window;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -43,7 +43,7 @@ namespace App1
         /// <param name="e">Tham số sự kiện điều hướng.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            App1.Models.QuestionLoader.LoadQuestion(
+            App1.Moduls.QuestionLoader.LoadQuestion(
                 0,                     // index câu hỏi
                 TitleTextBlock,        // nơi hiển thị title
                 BodyTextBlock,         // nơi hiển thị body
@@ -60,7 +60,7 @@ namespace App1
         /// <param name="e">Tham số sự kiện.</param>
         private async void AnswerButtonClick(object sender, RoutedEventArgs e)
         {
-            await App1.Models.AnswerModule.HandleAnswerAsync(
+            await App1.Moduls.AnswerModule.HandleAnswerAsync(
                 sender as Button,
                 this.XamlRoot,
                 Frame,
