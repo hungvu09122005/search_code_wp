@@ -61,7 +61,7 @@
                     Width="800"
                     IsHitTestVisible="False">
                 <TextBlock x:Name="BodyTextBlock"
-                           FontSize="24"
+                           FontSize="20"
                            Foreground="White"
                            TextAlignment="Left"
                            TextWrapping="Wrap"
@@ -97,7 +97,8 @@
                             Height="40"
                             Margin="20 5 20 5"
                             FontSize="16"
-                            Background="#1E1E1E"
+                            Background="#AA000000"
+                            Foreground="White"
                             CornerRadius="8"
                             HorizontalAlignment="Center"/>
                     </DataTemplate>
