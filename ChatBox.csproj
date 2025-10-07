@@ -3,7 +3,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
-    <RootNamespace>App1</RootNamespace>
+    <RootNamespace>ChatBox</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Platforms>x86;x64;ARM64</Platforms>
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
@@ -12,13 +12,6 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="Assets\escapeRoomBackground.jpg" />
-    <None Remove="Assets\imageLogin.png" />
-    <None Remove="Window\FinalQuestionPage.xaml" />
-    <None Remove="Window\ResultPage.xaml" />
-    <None Remove="Window\SecondQuestionPage.xaml" />
-  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -47,34 +40,12 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.250916003" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Window\ResultPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Window\FinalQuestionPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="LoginPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="FirstQuestionPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="HomePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Window\SecondQuestionPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Reference Include="ChatbotContract">
+      <HintPath>..\..\..\DemoLogger\ChatbotContract\ChatbotContract\bin\Debug\net9.0\ChatbotContract.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlLoggerv2">
+      <HintPath>..\..\..\DemoLogger\XmlLogger\XmlLogger\bin\Debug\net9.0\XmlLoggerv2.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <!--
