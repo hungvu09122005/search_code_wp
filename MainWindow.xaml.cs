@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using ChatBox.Plugins;
 
 namespace ChatBox
 {
@@ -30,10 +31,12 @@ namespace ChatBox
             // Hiển thị tin nhắn người dùng
             _messages.Add($"You: {userMessage}");
             InputTextBox.Text = string.Empty;
+            Logger.LogFile($"You: {userMessage}");
 
             // Gửi tin nhắn tới Ollama
             string botResponse = await SendMessageToOllama(userMessage);
             _messages.Add($"Bot: {botResponse}");
+            Logger.LogFile($"Bot: {botResponse}");
         }
 
         private async Task<string> SendMessageToOllama(string message)

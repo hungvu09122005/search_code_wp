@@ -40,11 +40,11 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.250916003" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ChatbotContract">
-      <HintPath>..\..\..\DemoLogger\ChatbotContract\ChatbotContract\bin\Debug\net9.0\ChatbotContract.dll</HintPath>
+    <Reference Include="ChatbotContractPlugin">
+      <HintPath>..\..\..\DemoLogger\ChatbotContractPlugin\bin\Debug\net8.0\ChatbotContractPlugin.dll</HintPath>
     </Reference>
-    <Reference Include="XmlLoggerv2">
-      <HintPath>..\..\..\DemoLogger\XmlLogger\XmlLogger\bin\Debug\net9.0\XmlLoggerv2.dll</HintPath>
+    <Reference Include="TxtLoggerPlugin">
+      <HintPath>..\..\..\DemoLogger\TxtLoggerPlugin\bin\Debug\net8.0\TxtLoggerPlugin.dll</HintPath>
     </Reference>
   </ItemGroup>
 
