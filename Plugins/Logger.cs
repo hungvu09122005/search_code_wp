@@ -17,7 +17,7 @@ namespace ChatBox.Plugins
             List<(string, ILogger)> loggers = new List<(string, ILogger)>();
 
             string folder = AppDomain.CurrentDomain.BaseDirectory;
-            var fis = (new DirectoryInfo(folder)).GetFiles("*Plugin.dll");
+            var fis = (new DirectoryInfo(folder)).GetFiles("*Plugin*.dll");
 
             foreach (var fi in fis)
             {
