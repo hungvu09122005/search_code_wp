@@ -12,10 +12,8 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="BlankPage1.xaml" />
-  </ItemGroup>
 
+  <!-- Assets -->
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -26,41 +24,44 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
 
+  <!-- Manifest -->
   <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
-  <!--
-    Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
-    Tools extension to be activated for this project even if the Windows App SDK Nuget
-    package has not yet been restored.
-  -->
-  <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-    <ProjectCapability Include="Msix" />
+  <!-- References (plugins DLL) -->
+  <ItemGroup>
+    <!-- Tham chiếu DLL theo đường dẫn tương đối -->
+    <Reference Include="ChatbotContractPlugin">
+      <HintPath>..\Plugins\ChatbotContractPlugin.dll</HintPath>
+      <Private>true</Private>
+      <CopyLocal>true</CopyLocal>
+    </Reference>
+    <Reference Include="TxtLoggerPlugin">
+      <HintPath>..\Plugins\TxtLoggerPlugin.dll</HintPath>
+      <Private>true</Private>
+      <CopyLocal>true</CopyLocal>
+    </Reference>
   </ItemGroup>
+
+  <!-- Copy plugins to output folder -->
+  <ItemGroup>
+    <None Include="..\Plugins\*.dll" Link="Plugins\%(Filename)%(Extension)">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- NuGet packages -->
   <ItemGroup>
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.6584" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.250916003" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="ChatbotContractPlugin">
-      <HintPath>bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX\ChatbotContractPlugin.dll</HintPath>
-    </Reference>
-    <Reference Include="TxtLoggerPlugin">
-      <HintPath>bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX\TxtLoggerPlugin.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="BlankPage1.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+
+  <!-- MSIX tool support -->
+  <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+    <ProjectCapability Include="Msix" />
   </ItemGroup>
 
-  <!--
-    Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution
-    Explorer "Package and Publish" context menu entry to be enabled for this project even if
-    the Windows App SDK Nuget package has not yet been restored.
-  -->
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
   </PropertyGroup>
