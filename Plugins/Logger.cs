@@ -25,7 +25,6 @@ namespace ChatBox.Plugins
             }
             catch (Exception ex)
             {
-                // Fallback an toàn
                 new MockLogger().Log($"[LoggerError] {ex.Message}");
             }
         }
@@ -43,28 +42,17 @@ namespace ChatBox.Plugins
                 {
                     try
                     {
-                        var assembly = Assembly.LoadFrom(fi.FullName);
-                        var types = assembly.GetTypes();
-
-                        foreach (var type in types)
+                        var asm = Assembly.LoadFrom(fi.FullName);
+                        foreach (var type in asm.GetTypes())
                         {
-                            if (type.IsClass &&
-                                typeof(ILogger).IsAssignableFrom(type) &&
-                                type.Name != nameof(MockLogger))
+                            if (type.IsClass && typeof(ILogger).IsAssignableFrom(type) && type.Name != nameof(MockLogger))
                             {
                                 if (Activator.CreateInstance(type) is ILogger instance)
                                     _cachedLoggers.Add(instance);
                             }
                         }
                     }
-                    catch (BadImageFormatException)
-                    {
-                        continue;
-                    }
-                    catch (Exception ex)
-                    {
-                        new MockLogger().Log($"[PluginLoadError] {ex.Message}");
-                    }
+                    catch { continue; }
                 }
 
                 _initialized = true;

@@ -12,41 +12,49 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <Grid>
+    <!-- ✅ Thêm x:Name="RootGrid" để gán DataContext từ code-behind -->
+    <Grid x:Name="RootGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <!-- Chat messages -->
-        <ListView x:Name="ChatListView"
-                  Grid.Row="0"
-                  Margin="10"
-                  VerticalAlignment="Stretch"
-                  VerticalContentAlignment="Bottom">
+        <ListView
+            ItemsSource="{Binding Messages}"
+            Grid.Row="0"
+            Margin="10"
+            VerticalAlignment="Stretch"
+            VerticalContentAlignment="Bottom">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding}" 
-                               TextWrapping="Wrap"
-                               Margin="5" />
+                    <TextBlock
+                        Text="{Binding}"
+                        TextWrapping="Wrap"
+                        Margin="5" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
         <!-- Input area -->
-        <StackPanel Grid.Row="1"
-                    Orientation="Horizontal"
-                    Margin="10"
-                    HorizontalAlignment="Stretch">
-            <TextBox x:Name="InputTextBox"
-                     Width="Auto"
-                     HorizontalAlignment="Stretch"
-                     PlaceholderText="Type a message or paste Ngrok URL..."
-                     KeyDown="InputTextBox_KeyDown"
-                     Margin="0,0,10,0" />
-            <Button Content="Send"
-                    Click="SendButton_Click"
-                    Width="80" />
-        </StackPanel>
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox
+                Text="{Binding InputText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Grid.Column="0"
+                PlaceholderText="Type a message or paste Ngrok URL..."
+                KeyDown="InputTextBox_KeyDown"
+                Margin="0,0,10,0" />
+
+            <Button
+                Content="Send"
+                Grid.Column="1"
+                Width="80"
+                Command="{Binding SendCommand}" />
+        </Grid>
     </Grid>
 </Window>

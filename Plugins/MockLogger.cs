@@ -18,10 +18,7 @@ namespace ChatBox.Plugins
                     File.AppendAllText(filename, line + Environment.NewLine);
                 }
             }
-            catch
-            {
-                // Im lặng nếu không thể log, tránh crash
-            }
+            catch { /* tránh crash */ }
         }
     }
 }
