@@ -1,1 +1,0 @@
-C:\Users\lechi\source\repos\search_code_wp\ChatBox.csproj;x64
