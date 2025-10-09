@@ -19,28 +19,34 @@
         </Grid.RowDefinitions>
 
         <!-- Chat messages -->
-        <ListView x:Name="ChatListView" 
-                  Grid.Row="0" 
-                  Margin="10">
+        <ListView x:Name="ChatListView"
+                  Grid.Row="0"
+                  Margin="10"
+                  VerticalAlignment="Stretch"
+                  VerticalContentAlignment="Bottom">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding}" 
-                               TextWrapping="Wrap" 
+                               TextWrapping="Wrap"
                                Margin="5" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
         <!-- Input area -->
-        <StackPanel Grid.Row="1" 
-                    Orientation="Horizontal" 
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
                     Margin="10"
-                    HorizontalAlignment="Center">
-            <TextBox x:Name="InputTextBox" 
-                     Width="300" 
+                    HorizontalAlignment="Stretch">
+            <TextBox x:Name="InputTextBox"
+                     Width="Auto"
+                     HorizontalAlignment="Stretch"
+                     PlaceholderText="Type a message or paste Ngrok URL..."
+                     KeyDown="InputTextBox_KeyDown"
                      Margin="0,0,10,0" />
-            <Button Content="Send" 
-                    Click="SendButton_Click" />
+            <Button Content="Send"
+                    Click="SendButton_Click"
+                    Width="80" />
         </StackPanel>
     </Grid>
 </Window>

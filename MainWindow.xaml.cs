@@ -1,21 +1,25 @@
-﻿using Microsoft.UI.Xaml;
+﻿using ChatBox.Plugins;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Input;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
-using ChatBox.Plugins;
 
 namespace ChatBox
 {
     public sealed partial class MainWindow : Window
     {
-        private string _ngrokUrl = string.Empty;
+        private static readonly HttpClient _httpClient = new(); // dùng lại toàn cục
         private readonly ObservableCollection<string> _messages = new();
+        private string _ngrokUrl = string.Empty;
         private bool _isConnected = false;
+        private readonly CancellationTokenSource _cts = new();
 
         public MainWindow()
         {
@@ -26,6 +30,20 @@ namespace ChatBox
 
         private async void SendButton_Click(object sender, RoutedEventArgs e)
         {
+            await ProcessUserInputAsync();
+        }
+
+        private async void InputTextBox_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter)
+            {
+                e.Handled = true;
+                await ProcessUserInputAsync();
+            }
+        }
+
+        private async Task ProcessUserInputAsync()
+        {
             string userMessage = InputTextBox.Text.Trim();
             if (string.IsNullOrEmpty(userMessage)) return;
 
@@ -34,7 +52,8 @@ namespace ChatBox
 
             if (!_isConnected)
             {
-                if (userMessage.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                if (Uri.TryCreate(userMessage, UriKind.Absolute, out var uri)
+                    && (uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps))
                 {
                     await ConnectToServerAsync(userMessage);
                 }
@@ -45,7 +64,7 @@ namespace ChatBox
                 return;
             }
 
-            string botResponse = await SendMessageToOllama(userMessage);
+            string botResponse = await SendMessageToOllamaAsync(userMessage);
             AddBotMessage(botResponse);
         }
 
@@ -55,26 +74,27 @@ namespace ChatBox
             AddBotMessage("I have received your link.");
             AddBotMessage("Please wait while connecting to AI...");
 
-            string response = await SendMessageToOllama("Hello");
+            string response = await SendMessageToOllamaAsync("Hello");
 
             if (response.StartsWith("Error"))
             {
-                AddBotMessage("Failed to connect to AI server.");
+                AddBotMessage("Failed to connect to AI server. Please check the URL and try again.");
                 _isConnected = false;
             }
             else
             {
-                AddBotMessage("How can I assist you today?");
+                AddBotMessage("Connection established! How can I assist you today?");
                 _isConnected = true;
             }
         }
 
-        private async Task<string> SendMessageToOllama(string message)
+        private async Task<string> SendMessageToOllamaAsync(string message)
         {
+            if (string.IsNullOrEmpty(_ngrokUrl))
+                return "Error: No server URL set.";
+
             try
             {
-                using HttpClient client = new();
-
                 var request = new
                 {
                     model = "gpt-oss:20b",
@@ -82,20 +102,28 @@ namespace ChatBox
                     stream = false
                 };
 
-                var content = new StringContent(
+                using var content = new StringContent(
                     JsonSerializer.Serialize(request),
                     Encoding.UTF8,
-                    "application/json"
-                );
+                    "application/json");
 
-                var response = await client.PostAsync($"{_ngrokUrl}/api/generate", content);
+                using var response = await _httpClient.PostAsync($"{_ngrokUrl}/api/generate", content, _cts.Token);
                 response.EnsureSuccessStatusCode();
 
                 string responseBody = await response.Content.ReadAsStringAsync();
-                string? lastLine = responseBody
-                    .Trim()
-                    .Split('\n')
-                    .LastOrDefault(l => l.Contains("\"response\""));
+                string? lastLine = null;
+
+                try
+                {
+                    lastLine = responseBody
+                        .Trim()
+                        .Split('\n', StringSplitOptions.RemoveEmptyEntries)
+                        .LastOrDefault(l => l.Contains("\"response\""));
+                }
+                catch
+                {
+                    return "No valid response from model.";
+                }
 
                 if (string.IsNullOrEmpty(lastLine))
                     return "No response from model.";
@@ -106,53 +134,38 @@ namespace ChatBox
 
                 return "No response field found.";
             }
+            catch (TaskCanceledException)
+            {
+                return "Request canceled.";
+            }
+            catch (HttpRequestException ex)
+            {
+                return $"Error: Cannot reach server ({ex.Message})";
+            }
             catch (Exception ex)
             {
-                await ShowErrorAndExitAsync(ex.Message);
+                AddBotMessage($"Unexpected error: {ex.Message}");
                 return $"Error: {ex.Message}";
             }
         }
 
-        private async Task ShowErrorAndExitAsync(string message)
-        {
-            var errorDialog = new ContentDialog
-            {
-                Title = "Error",
-                Content = $"An error occurred: {message}",
-                CloseButtonText = "OK",
-                XamlRoot = this.Content.XamlRoot
-            };
-            await errorDialog.ShowAsync();
-
-            var exitDialog = new ContentDialog
-            {
-                Title = "Exit",
-                Content = "Exiting application...",
-                CloseButtonText = "OK",
-                XamlRoot = this.Content.XamlRoot
-            };
-            await exitDialog.ShowAsync();
-
-            Environment.Exit(0);
-        }
-
         private void AddUserMessage(string message)
         {
-            // ✅ Cập nhật UI thread an toàn
             DispatcherQueue.TryEnqueue(() =>
             {
                 _messages.Add($"You: {message}");
                 if (_isConnected) Logger.LogFile($"You: {message}");
+                ChatListView.ScrollIntoView(_messages[^1]);
             });
         }
 
         private void AddBotMessage(string message)
         {
-            // ✅ Cập nhật UI thread an toàn
             DispatcherQueue.TryEnqueue(() =>
             {
                 _messages.Add($"Bot: {message}");
                 if (_isConnected) Logger.LogFile($"Bot: {message}");
+                ChatListView.ScrollIntoView(_messages[^1]);
             });
         }
     }
