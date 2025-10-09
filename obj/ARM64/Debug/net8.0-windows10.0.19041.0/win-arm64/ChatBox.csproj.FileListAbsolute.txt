@@ -1,0 +1,16 @@
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\ChatBox.csproj.AssemblyReference.cache
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\App.g.i.cs
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\App.g.cs
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\BlankPage1.g.i.cs
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\BlankPage1.g.cs
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\MainWindow.g.i.cs
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\MainWindow.g.cs
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\XamlTypeInfo.g.cs
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\App.xaml
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\BlankPage1.xaml
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\MainWindow.xaml
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\App.xbf
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\BlankPage1.xbf
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\MainWindow.xbf
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\XamlSaveStateFile.xml
+C:\Users\lechi\source\repos\search_code_wp\obj\ARM64\Debug\net8.0-windows10.0.19041.0\win-arm64\ChatBox.GeneratedMSBuildEditorConfig.editorconfig

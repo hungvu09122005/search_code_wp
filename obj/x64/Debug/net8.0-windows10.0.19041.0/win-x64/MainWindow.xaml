@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="ChatBox.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="ChatBox">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <!-- ✅ Thêm x:Name="RootGrid" để gán DataContext từ code-behind -->
+    <Grid x:ConnectionId='2' x:Name="RootGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Chat messages -->
+        <ListView
+            ItemsSource="{Binding Messages}"
+            Grid.Row="0"
+            Margin="10"
+            VerticalAlignment="Stretch"
+            VerticalContentAlignment="Bottom">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock
+                        Text="{Binding}"
+                        TextWrapping="Wrap"
+                        Margin="5" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Input area -->
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:ConnectionId='3' Text="{Binding InputText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Column="0"
+                     PlaceholderText="Type a message or paste Ngrok URL..."
+                                                   
+                     IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}"
+                     Margin="0,0,10,0" />
+
+            <Button Content="Send"
+                    Grid.Column="1"
+                    Width="80"
+                    IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}"
+                    Command="{Binding SendCommand}" />  
+
+        </Grid>
+    </Grid>
+</Window>
+
