@@ -43,18 +43,19 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <TextBox
-                Text="{Binding InputText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                Grid.Column="0"
-                PlaceholderText="Type a message or paste Ngrok URL..."
-                KeyDown="InputTextBox_KeyDown"
-                Margin="0,0,10,0" />
+            <TextBox Text="{Binding InputText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Column="0"
+                     PlaceholderText="Type a message or paste Ngrok URL..."
+                     KeyDown="InputTextBox_KeyDown"
+                     IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}"
+                     Margin="0,0,10,0" />
 
-            <Button
-                Content="Send"
-                Grid.Column="1"
-                Width="80"
-                Command="{Binding SendCommand}" />
+            <Button Content="Send"
+                    Grid.Column="1"
+                    Width="80"
+                    IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}"
+                    Command="{Binding SendCommand}" />  
+
         </Grid>
     </Grid>
 </Window>

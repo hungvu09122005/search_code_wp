@@ -22,6 +22,7 @@ namespace ChatBox.ViewModels
         private string _inputText = string.Empty;
         private string _ngrokUrl = string.Empty;
         private bool _isConnected = false;
+        private bool _isBusy = false; // ✅ Thêm cờ chặn nhập khi đang gửi
 
         public ObservableCollection<string> Messages { get; } = new();
 
@@ -35,18 +36,39 @@ namespace ChatBox.ViewModels
             }
         }
 
+        public bool IsBusy
+        {
+            get => _isBusy;
+            private set
+            {
+                if (_isBusy != value)
+                {
+                    _isBusy = value;
+                    OnPropertyChanged(nameof(IsBusy));
+                    (SendCommand as RelayCommand)?.RaiseCanExecuteChanged();
+                }
+            }
+        }
+
         public ICommand SendCommand { get; }
 
         public ChatViewModel()
         {
-            SendCommand = new RelayCommand(async _ => await ProcessInputAsync());
+            SendCommand = new RelayCommand(async _ => await ProcessInputAsync(), _ => !IsBusy);
             AddBotMessage("Please enter a link to connect to AI.");
         }
 
         private async Task ProcessInputAsync()
         {
+            if (IsBusy) return;
+            IsBusy = true; // ✅ Chặn nhập mới
+
             string userMessage = InputText.Trim();
-            if (string.IsNullOrEmpty(userMessage)) return;
+            if (string.IsNullOrEmpty(userMessage))
+            {
+                IsBusy = false;
+                return;
+            }
 
             AddUserMessage(userMessage);
             InputText = string.Empty;
@@ -62,11 +84,15 @@ namespace ChatBox.ViewModels
                 {
                     AddBotMessage("Please enter a valid Ngrok link (must start with http). Enter again!");
                 }
+
+                IsBusy = false;
                 return;
             }
 
             string response = await SendMessageToOllamaAsync(userMessage);
             AddBotMessage(response);
+
+            IsBusy = false; // ✅ Cho phép nhập lại
         }
 
         private async Task ConnectToServerAsync(string url)
@@ -181,9 +207,7 @@ namespace ChatBox.ViewModels
         }
 
         public bool CanExecute(object? parameter) => _canExecute?.Invoke(parameter) ?? true;
-
         public async void Execute(object? parameter) => await _execute(parameter);
-
         public event EventHandler? CanExecuteChanged;
         public void RaiseCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
     }
