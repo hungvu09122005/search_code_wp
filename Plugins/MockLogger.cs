@@ -14,6 +14,8 @@ namespace ChatBox.Plugins
         {
         }
 
+        public bool IsEnabled { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public void Log(string message)
         {
             var now = DateTime.Now;
