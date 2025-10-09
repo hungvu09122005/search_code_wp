@@ -19,14 +19,14 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace App1
+namespace ChatBox
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
     public partial class App : Application
     {
-        private Microsoft.UI.Xaml.Window? _window;
+        private Window? _window;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -44,7 +44,7 @@ namespace App1
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
             _window = new MainWindow();
-            _window!.Activate();
+            _window.Activate();
         }
     }
 }
