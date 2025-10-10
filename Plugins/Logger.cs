@@ -7,12 +7,31 @@ using System.Reflection;
 
 namespace ChatBox.Plugins
 {
+    /// <summary>
+    /// Lớp tĩnh dùng để ghi log thông qua các plugin logger.
+    /// </summary>
     internal static class Logger
     {
+        /// <summary>
+        /// Danh sách các logger đã được cache sau khi tải plugin.
+        /// </summary>
         private static readonly List<ILogger> _cachedLoggers = new();
+
+        /// <summary>
+        /// Biến đánh dấu đã khởi tạo logger hay chưa.
+        /// </summary>
         private static bool _initialized = false;
+
+        /// <summary>
+        /// Đối tượng dùng để khóa khi tải plugin logger.
+        /// </summary>
         private static readonly object _lock = new();
 
+        /// <summary>
+        /// Ghi một thông điệp log vào file thông qua logger plugin.
+        /// Nếu không có plugin logger, sử dụng MockLogger.
+        /// </summary>
+        /// <param name="message">Thông điệp cần ghi log.</param>
         public static void LogFile(string message)
         {
             try
@@ -29,6 +48,10 @@ namespace ChatBox.Plugins
             }
         }
 
+        /// <summary>
+        /// Tải các plugin logger từ thư mục hiện tại và cache lại.
+        /// Chỉ thực hiện một lần duy nhất.
+        /// </summary>
         private static void LoadPlugins()
         {
             lock (_lock)

@@ -688,16 +688,16 @@
     <AppxPackagedFile Include="C:\Users\lechi\.nuget\packages\microsoft.web.webview2\1.0.3179.45\runtimes\win-x64\native_uap\Microsoft.Web.WebView2.Core.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX\ChatbotContractPlugin.dll">
+    <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\ReferencePlugin\ChatbotContractPlugin.dll">
       <PackagePath>ChatbotContractPlugin.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\net8.0-windows10.0.17763.0\Microsoft.Web.WebView2.Core.Projection.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.Projection.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lechi\.nuget\packages\microsoft.windowsappsdk.ml\1.8.2091\lib\net6.0-windows10.0.17763.0\Microsoft.Windows.AI.MachineLearning.Projection.dll">
+    <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\ReferencePlugin\Microsoft.Windows.AI.MachineLearning.Projection.dll">
       <PackagePath>Microsoft.Windows.AI.MachineLearning.Projection.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX\TxtLoggerPlugin.dll">
+    <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\ReferencePlugin\TxtLoggerPlugin.dll">
       <PackagePath>TxtLoggerPlugin.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ChatBox.deps.json">

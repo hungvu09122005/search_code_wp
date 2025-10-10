@@ -30,21 +30,21 @@
     <AppXManifest Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-10-09T13:15:17.860</Modified>
+      <Modified>2025-10-10T06:22:59.864</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ChatBox.runtimeconfig.json">
       <PackagePath>ChatBox.runtimeconfig.json</PackagePath>
-      <Modified>2025-10-09T13:15:16.750</Modified>
+      <Modified>2025-10-09T15:04:39.721</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>ChatBox.exe</PackagePath>
-      <Modified>2025-10-09T13:15:15.938</Modified>
+      <Modified>2025-10-10T06:22:58.825</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ChatBox.dll">
       <PackagePath>ChatBox.dll</PackagePath>
-      <Modified>2025-10-09T13:15:15.922</Modified>
+      <Modified>2025-10-10T06:22:58.774</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.20\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -918,53 +918,53 @@
       <PackagePath>Microsoft.Web.WebView2.Core.dll</PackagePath>
       <Modified>2025-03-30T09:04:20.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX\ChatbotContractPlugin.dll">
+    <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\ReferencePlugin\ChatbotContractPlugin.dll">
       <PackagePath>ChatbotContractPlugin.dll</PackagePath>
-      <Modified>1601-01-01T00:00:00.000</Modified>
+      <Modified>2025-10-09T14:58:38.043</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\.nuget\packages\microsoft.web.webview2\1.0.3179.45\lib_manual\net8.0-windows10.0.17763.0\Microsoft.Web.WebView2.Core.Projection.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.Projection.dll</PackagePath>
       <Modified>2025-03-30T09:04:20.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lechi\.nuget\packages\microsoft.windowsappsdk.ml\1.8.2091\lib\net6.0-windows10.0.17763.0\Microsoft.Windows.AI.MachineLearning.Projection.dll">
+    <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\ReferencePlugin\Microsoft.Windows.AI.MachineLearning.Projection.dll">
       <PackagePath>Microsoft.Windows.AI.MachineLearning.Projection.dll</PackagePath>
-      <Modified>2025-09-10T22:33:32.000</Modified>
+      <Modified>2025-10-09T14:58:38.152</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX\TxtLoggerPlugin.dll">
+    <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\ReferencePlugin\TxtLoggerPlugin.dll">
       <PackagePath>TxtLoggerPlugin.dll</PackagePath>
-      <Modified>1601-01-01T00:00:00.000</Modified>
+      <Modified>2025-10-09T14:58:38.996</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ChatBox.deps.json">
       <PackagePath>ChatBox.deps.json</PackagePath>
-      <Modified>2025-10-09T13:15:16.610</Modified>
+      <Modified>2025-10-09T15:04:39.721</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2025-10-01T05:39:40.127</Modified>
+      <Modified>2025-10-09T14:44:27.229</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
-      <Modified>2025-10-01T05:39:40.127</Modified>
+      <Modified>2025-10-09T14:44:27.229</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
-      <Modified>2025-10-01T05:39:40.143</Modified>
+      <Modified>2025-10-09T14:44:27.229</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
-      <Modified>2025-10-01T05:39:40.143</Modified>
+      <Modified>2025-10-09T14:44:27.229</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
-      <Modified>2025-10-01T05:39:40.143</Modified>
+      <Modified>2025-10-09T14:44:27.229</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
-      <Modified>2025-10-01T05:39:40.143</Modified>
+      <Modified>2025-10-09T14:44:27.229</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
-      <Modified>2025-10-01T05:39:40.143</Modified>
+      <Modified>2025-10-09T14:44:27.229</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\.nuget\packages\microsoft.web.webview2\1.0.3179.45\build\..\lib\Microsoft.Web.WebView2.Core.winmd">
       <PackagePath>Microsoft.Web.WebView2.Core.winmd</PackagePath>
@@ -972,7 +972,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lechi\source\repos\search_code_wp\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-10-09T13:15:17.063</Modified>
+      <Modified>2025-10-10T06:22:59.215</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -7,12 +7,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Title="ChatBox">
+    <!-- 
+    File: MainWindow.xaml
+    Mục đích: Xây dựng giao diện chính của ứng dụng ChatBox.
 
+    Thành phần chính:
+    1. ListView - hiển thị các tin nhắn.
+    2️. TextBox - nhập tin nhắn hoặc URL Ngrok.
+    3️. Button - gửi tin nhắn.
+    4️. Sử dụng MicaBackdrop để có hiệu ứng nền mờ trong suốt (Windows 11).
+    5️. Dữ liệu được liên kết (Binding) với MainViewModel.
+    -->
     <Window.SystemBackdrop>
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <!-- ✅ Thêm x:Name="RootGrid" để gán DataContext từ code-behind -->
+    <!-- Thêm x:Name="RootGrid" để gán DataContext từ code-behind -->
     <Grid x:Name="RootGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -49,7 +59,7 @@
                      KeyDown="InputTextBox_KeyDown"
                      IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}"
                      Margin="0,0,10,0" />
-
+            <!-- Nút gửi -->
             <Button Content="Send"
                     Grid.Column="1"
                     Width="80"

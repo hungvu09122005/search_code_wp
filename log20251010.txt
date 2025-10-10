@@ -1,0 +1,3 @@
+[2025-10-10 13:25:38] Bot: Connection established! How can I assist you today?
+[2025-10-10 13:25:48] You: Hôm nay bạn cảm thấy thế nào?
+[2025-10-10 13:25:53] Bot: Tôi là một trí tuệ nhân tạo nên không có cảm xúc thật sự, nhưng luôn sẵn sàng và nhiệt tình giúp bạn. Có điều gì bạn muốn chia sẻ hoặc hỏi tôi không?

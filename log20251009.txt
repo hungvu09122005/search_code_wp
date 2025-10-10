@@ -1,0 +1,51 @@
+[2025-10-09 22:05:38] Bot: Connection established! How can I assist you today?
+[2025-10-09 22:05:56] You: Code chương trình C++ đơn giản
+[2025-10-09 22:06:19] Bot: Sure! Below is a **very simple C++ program** that:
+
+1. Prints “Hello, World!” to the console.  
+2. Asks the user to enter their name.  
+3. Greets the user by name.
+
+```cpp
+// File: hello_name.cpp
+#include <iostream>   // for std::cout, std::cin, std::string
+
+int main() {
+    // 1. Print a basic greeting
+    std::cout << "Hello, World!" << std::endl;
+
+    // 2. Ask the user for their name
+    std::cout << "What is your name? ";
+    std::string name;
+    std::getline(std::cin, name);          // read a full line
+
+    // 3. Greet the user by name
+    std::cout << "Nice to meet you, " << name << "!" << std::endl;
+
+    return 0;   // optional, 0 indicates successful completion
+}
+```
+
+### How to compile & run
+
+```bash
+# On Linux/macOS (using g++)
+g++ -std=c++17 -O2 -Wall -Wextra -pedantic hello_name.cpp -o hello_name
+./hello_name
+
+# On Windows (using Visual Studio Developer Command Prompt)
+cl /EHsc hello_name.cpp
+hello_name.exe
+```
+
+### What you’ll see
+
+```
+Hello, World!
+What is your name? Alice
+Nice to meet you, Alice!
+```
+
+Feel free to modify the program (e.g., add more logic, loops, or functions) to practice further!
+[2025-10-09 22:07:06] You: Cảm ơn bạn
+[2025-10-09 22:07:10] Bot: Bạn rất hoan nghênh! Nếu cần hỗ trợ thêm bất cứ điều gì, cứ thoải mái nói nhé. Chúc bạn một ngày tuyệt vời!

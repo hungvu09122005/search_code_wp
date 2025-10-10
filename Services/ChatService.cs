@@ -7,14 +7,36 @@ using System.Threading.Tasks;
 
 namespace ChatBox.Services
 {
+    /// <summary>
+    /// Dịch vụ trò chuyện với AI server thông qua HTTP.
+    /// </summary>
     public class ChatService
     {
+        /// <summary>
+        /// Đối tượng HttpClient dùng để gửi yêu cầu HTTP.
+        /// </summary>
         private static readonly HttpClient _httpClient = new();
+
+        /// <summary>
+        /// Token hủy bỏ cho các yêu cầu bất đồng bộ.
+        /// </summary>
         private readonly CancellationTokenSource _cts = new();
 
+        /// <summary>
+        /// URL của server AI (ngrok).
+        /// </summary>
         private string _ngrokUrl = string.Empty;
+
+        /// <summary>
+        /// Trạng thái kết nối đến server AI.
+        /// </summary>
         public bool IsConnected { get; private set; }
 
+        /// <summary>
+        /// Kết nối đến server AI với URL được cung cấp.
+        /// </summary>
+        /// <param name="url">URL của server AI.</param>
+        /// <returns>Thông báo kết quả kết nối.</returns>
         public async Task<string> ConnectAsync(string url)
         {
             _ngrokUrl = url;
@@ -31,6 +53,11 @@ namespace ChatBox.Services
             return "Connection established! How can I assist you today?";
         }
 
+        /// <summary>
+        /// Gửi tin nhắn đến server AI và nhận phản hồi.
+        /// </summary>
+        /// <param name="message">Nội dung tin nhắn gửi đi.</param>
+        /// <returns>Phản hồi từ server AI hoặc thông báo lỗi.</returns>
         public async Task<string> SendMessageAsync(string message)
         {
             if (string.IsNullOrEmpty(_ngrokUrl))
@@ -55,7 +82,6 @@ namespace ChatBox.Services
 
                 string responseBody = await response.Content.ReadAsStringAsync();
 
-                // 🧠 Parsing JSON đúng chuẩn, không Split()
                 try
                 {
                     using var doc = JsonDocument.Parse(responseBody);

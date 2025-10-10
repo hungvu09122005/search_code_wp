@@ -4,8 +4,15 @@ using System.IO;
 
 namespace ChatBox.Plugins
 {
+    /// <summary>
+    /// Triển khai giao diện <see cref="ILogger"/> để ghi log vào file văn bản.
+    /// </summary>
     internal class MockLogger : ILogger
     {
+        /// <summary>
+        /// Ghi một thông điệp log vào file theo ngày hiện tại.
+        /// </summary>
+        /// <param name="message">Thông điệp cần ghi log.</param>
         public void Log(string message)
         {
             try
